@@ -130,6 +130,8 @@ def home():
                   session.pop("MTD", None)
 
                   return render_template("index.html", REQUEST_HISTORY=session.get("REQUEST_HISTORY", []), SELECTED_MODEL = request.args.get("SELECTED_MODEL"), MODEL_CHOSEN = True, mts = request.args.get("MTS"), lts = request.args.get("LTS"), mtd = request.args.get("MTD"), RESULT=request.args.get("RESULT"), SHOW_RESULT=True)
+       elif ("SELECTED_MODEL" in session and session["LAST_REQUEST"] == "GET"):
+           return render_template("index.html", REQUEST_HISTORY = session.get("REQUEST_HISTORY", []), MODEL_CHOSEN=False, SHOW_RESULT=False, RESULT=-1)
        else:
            REQUEST_HISTORY.append("GET")
            LAST_REQUEST = "GET"
