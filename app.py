@@ -137,8 +137,11 @@ def home():
            session["REQUEST_HISTORY"] = REQUEST_HISTORY
            session["LAST_REQUEST"] = LAST_REQUEST
 
-           return render_template("index.html", SELECTED_MODEL = session["SELECTED_MODEL"], REQUEST_HISTORY = session.get("REQUEST_HISTORY", []), MODEL_CHOSEN=False, SHOW_RESULT=False, RESULT=-1)
-       
+           if ("SELECTED_MODEL" in session):
+               return render_template("index.html", SELECTED_MODEL = session["SELECTED_MODEL"], REQUEST_HISTORY = session.get("REQUEST_HISTORY", []), MODEL_CHOSEN=False, SHOW_RESULT=False, RESULT=-1)
+           else:
+               return render_template("index.html", REQUEST_HISTORY = session.get("REQUEST_HISTORY", []), MODEL_CHOSEN=False, SHOW_RESULT=False, RESULT=-1)
+               
 def perform_inference(model_path:str, array:np.array) -> np.array:
     if model_path.endswith('joblib'):
         model = joblib.load(model_path)
