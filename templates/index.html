@@ -10,6 +10,11 @@
 		body {
 			background-color: #FFFFFF;
 		}
+		a.changemodel {
+			color: orange;
+			font-size: 10px;
+			font-family: 'Times New Roman'
+		}
 	</style>
 </head>
 <body>
@@ -57,7 +62,7 @@
 				</select>
 			</label>
 		</div>
-		<center><button type="submit" class="btn btn-primary mb-5 p-3 text-white">Predict Outcome</button></center>
+		<center><button type="submit" class="btn btn-primary mt-5 p-3 text-white">Predict Outcome</button></center>
 		</form>
 	{% elif SELECTED_MODEL == "Model #3" %}
 	    <h1 class="my-5 text-center">Features</h1>
@@ -82,7 +87,7 @@
 				</select>
 			</label>
 		</div>
-		<center><button type="submit" class="btn btn-primary mb-5 p-3 text-white">Predict Outcome</button></center>
+		<center><button type="submit" class="btn btn-primary mt-5 p-3 text-white">Predict Outcome</button></center>
 		</form>
 	{% else %}
 	    <h1 class="my-5 text-center">Features</h1>
@@ -102,9 +107,11 @@
 				<br>
 			</label>
 		</div>
-		<center><button type="submit" class="btn btn-primary mb-5 p-3 text-white">Predict Outcome</button></center>
+		<center><button type="submit" class="btn btn-primary mt-5 p-3 text-white">Predict Outcome</button></center>
 		</form>
 	{% endif %}
+
+	<center><a class="changemodel" href="/">Change Your Preferred Model</a></center>
 
 	{% if SHOW_RESULT == True %}
 		<hr>
@@ -209,13 +216,55 @@
 		<h1 class="my-5 text-center">Features</h1>
 		<div class="container p-5 my-5 bg-light text-dark text-center">
 			<label for="selmod" class="form-label">Select Model:
-			<select class="form-select" id="selmod" name="select_model">
-				<option>Model #1</option>
-				<option>Model #2</option>
-				<option>Model #3</option>
-				<option>Model #4</option>
-				<option>Model #5</option>
-			</select>
+			{% if SELECTED_MODEL == "Model #1" %}
+				<select class="form-select" id="selmod" name="select_model">
+					<option id="model1" selected>Model #1</option>
+					<option id="model2">Model #2</option>
+					<option id="model3">Model #3</option>
+					<option id="model4">Model #4</option>
+					<option id="model5">Model #5</option>
+				</select>
+			{% elif SELECTED_MODEL == "Model #2" %}
+				<select class="form-select" id="selmod" name="select_model">
+					<option id="model1">Model #1</option>
+					<option id="model2" selected>Model #2</option>
+					<option id="model3">Model #3</option>
+					<option id="model4">Model #4</option>
+					<option id="model5">Model #5</option>
+				</select>
+			{% elif SELECTED_MODEL == "Model #3" %}
+				<select class="form-select" id="selmod" name="select_model">
+					<option id="model1">Model #1</option>
+					<option id="model2">Model #2</option>
+					<option id="model3" selected>Model #3</option>
+					<option id="model4">Model #4</option>
+					<option id="model5">Model #5</option>
+				</select>
+			{% elif SELECTED_MODEL == "Model #4" %}
+				<select class="form-select" id="selmod" name="select_model">
+					<option id="model1">Model #1</option>
+					<option id="model2">Model #2</option>
+					<option id="model3">Model #3</option>
+					<option id="model4" selected>Model #4</option>
+					<option id="model5">Model #5</option>
+				</select>
+			{% elif SELECTED_MODEL == "Model #5" %}
+				<select class="form-select" id="selmod" name="select_model">
+					<option id="model1">Model #1</option>
+					<option id="model2">Model #2</option>
+					<option id="model3">Model #3</option>
+					<option id="model4">Model #4</option>
+					<option id="model5" selected>Model #5</option>
+				</select>
+			{% else %}
+				<select class="form-select" id="selmod" name="select_model">
+					<option id="model1">Model #1</option>
+					<option id="model2">Model #2</option>
+					<option id="model3">Model #3</option>
+					<option id="model4">Model #4</option>
+					<option id="model5">Model #5</option>
+				</select>
+			{% endif %}
 			<br>
 			<center><button type="submit" class="btn btn-danger text-white">Select Model For Use</button></center>
 			<hr>
@@ -223,7 +272,7 @@
 	</form>
 {% endif %}
 
-{% for i in range(1, 8) %}
+{% for i in range(1, 13) %}
 	<br>
 {% endfor %}
 
