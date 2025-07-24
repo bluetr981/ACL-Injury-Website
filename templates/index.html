@@ -216,7 +216,7 @@
 		<h1 class="my-5 text-center">Features</h1>
 		<div class="container p-5 my-5 bg-light text-dark text-center">
 			<label for="selmod" class="form-label">Select Model:
-			{% if SELECTED_MODEL == "Model #1" %}
+			{% if session["SELECTED_MODEL"] == "Model #1" %}
 				<select class="form-select" id="selmod" name="select_model">
 					<option id="model1" selected>Model #1</option>
 					<option id="model2">Model #2</option>
@@ -224,7 +224,7 @@
 					<option id="model4">Model #4</option>
 					<option id="model5">Model #5</option>
 				</select>
-			{% elif SELECTED_MODEL == "Model #2" %}
+			{% elif session["SELECTED_MODEL"] == "Model #2" %}
 				<select class="form-select" id="selmod" name="select_model">
 					<option id="model1">Model #1</option>
 					<option id="model2" selected>Model #2</option>
@@ -232,7 +232,7 @@
 					<option id="model4">Model #4</option>
 					<option id="model5">Model #5</option>
 				</select>
-			{% elif SELECTED_MODEL == "Model #3" %}
+			{% elif session["SELECTED_MODEL"] == "Model #3" %}
 				<select class="form-select" id="selmod" name="select_model">
 					<option id="model1">Model #1</option>
 					<option id="model2">Model #2</option>
@@ -240,7 +240,7 @@
 					<option id="model4">Model #4</option>
 					<option id="model5">Model #5</option>
 				</select>
-			{% elif SELECTED_MODEL == "Model #4" %}
+			{% elif session["SELECTED_MODEL"] == "Model #4" %}
 				<select class="form-select" id="selmod" name="select_model">
 					<option id="model1">Model #1</option>
 					<option id="model2">Model #2</option>
@@ -248,7 +248,7 @@
 					<option id="model4" selected>Model #4</option>
 					<option id="model5">Model #5</option>
 				</select>
-			{% elif SELECTED_MODEL == "Model #5" %}
+			{% elif session["SELECTED_MODEL"] == "Model #5" %}
 				<select class="form-select" id="selmod" name="select_model">
 					<option id="model1">Model #1</option>
 					<option id="model2">Model #2</option>
