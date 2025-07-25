@@ -8,7 +8,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	<style>
 		body {
-			background-color: #FFFFFF;
+			background-color: white;
 		}
 		a.changemodel {
 			color: orange;
@@ -36,12 +36,18 @@
 </div>
 
 {% if MODEL_CHOSEN == True %}
-	{% if SELECTED_MODEL in ["Model #1", "Model #2", "Model #5"] %}
+	{% if SELECTED_MODEL in ["RF_Acc_[1, 2, 3, 4, 5]", "SVM_Acc_model_[1, 2, 3, 4, 5]", "XGB_F2_model_[1, 2, 3, 4, 5]"] %}
 	    <h1 class="my-5 text-center">Features</h1>
 		<form action="#result" class="was-validated" method="post">
 			<div class="container p-5 mb-5 bg-light text-dark text-center">
 				<label for="SELECTED_MODEL" class="form-label">Selected Model:</label>
-				<input type="text" value="{{SELECTED_MODEL}}" id="SELECTED_MODEL" size="5" disabled/>
+				{% if SELECTED_MODEL == "RF_Acc_[1, 2, 3, 4, 5]" %}
+					<input type="text" value="&nbsp;{{SELECTED_MODEL}}" id="SELECTED_MODEL" size="16" disabled/>
+				{% elif SELECTED_MODEL == "SVM_Acc_model_[1, 2, 3, 4, 5]" %}
+					<input type="text" value="&nbsp;{{SELECTED_MODEL}}" id="SELECTED_MODEL" size="25" disabled/>
+				{% else %}
+					<input type="text" value="{{SELECTED_MODEL}}" id="SELECTED_MODEL" size="22" disabled/>
+				{% endif %}
 				<br>
 				<label for="CTS" class="form-label">Enter <mark>CTS</mark> (Coronal Tibial Slope) in degrees:
 				<input type="text" class="form-control" id="CTS" name="CoronalTibialSlope" placeholder="Enter CTS" required>
@@ -64,12 +70,12 @@
 		</div>
 		<center><button type="submit" class="btn btn-primary mt-5 p-3 text-white">Predict Outcome</button></center>
 		</form>
-	{% elif SELECTED_MODEL == "Model #3" %}
+	{% elif SELECTED_MODEL == "SVM_Acc_model_[1, 2, 4, 5]" %}
 	    <h1 class="my-5 text-center">Features</h1>
 		<form action="#result" class="was-validated" method="post">
 			<div class="container p-5 mb-5 bg-light text-dark text-center">
 				<label for="SELECTED_MODEL" class="form-label">Selected Model:</label>
-				<input type="text" value="{{SELECTED_MODEL}}" id="SELECTED_MODEL" size="5" disabled/>
+				<input type="text" value="&nbsp;{{SELECTED_MODEL}}" id="SELECTED_MODEL" size="22" disabled/>
 				<br>
 				<label for="CTS" class="form-label">Enter <mark>CTS</mark> (Coronal Tibial Slope) in degrees:
 				<input type="text" class="form-control" id="CTS" name="CoronalTibialSlope" placeholder="Enter CTS" required>
@@ -94,7 +100,7 @@
 		<form action="#result" class="was-validated" method="post">
 			<div class="container p-5 mb-5 bg-light text-dark text-center">
 				<label for="SELECTED_MODEL" class="form-label">Selected Model:</label>
-				<input type="text" value="{{SELECTED_MODEL}}" id="SELECTED_MODEL" size="5" disabled/>
+				<input type="text" value="&nbsp;{{SELECTED_MODEL}}" id="SELECTED_MODEL" size="19" disabled/>
 				<br>
 				<label for="MTS" class="form-label">Enter <mark>MTS</mark> (Medial Tibial Slope) in degrees:
 				<input type="text" class="form-control" id="MTS" name="MedialTibialSlope" placeholder="Enter MTS" required>
@@ -116,7 +122,7 @@
 	{% if SHOW_RESULT == True %}
 		<hr>
 		<h3 class="text-center"><u>Results</u></h3>
-		{% if SELECTED_MODEL in ["Model #1", "Model #2", "Model #5"] %}
+		{% if SELECTED_MODEL in ["RF_Acc_[1, 2, 3, 4, 5]", "SVM_Acc_model_[1, 2, 3, 4, 5]", "XGB_F2_model_[1, 2, 3, 4, 5]"] %}
 			{% if RESULT == 1 %}
 				<div class="alert alert-danger" id="result">
 					<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CTS (Coronal Tibial Slope): <mark>{{cts}}</mark></strong>
@@ -150,7 +156,7 @@
 				</div>
 				<hr>
 			{% endif %}
-		{% elif SELECTED_MODEL == "Model #3" %}
+		{% elif SELECTED_MODEL == "SVM_Acc_model_[1, 2, 4, 5]" %}
 			{% if RESULT == 1 %}
 				<div class="alert alert-danger" id="result">
 					<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CTS (Coronal Tibial Slope): <mark>{{cts}}</mark></strong>
@@ -180,7 +186,7 @@
 				</div>
 				<hr>
 			{% endif %}
-		{% elif SELECTED_MODEL == "Model #4" %}
+		{% elif SELECTED_MODEL == "SVM_F2_model_[2, 3, 4]" %}
 			{% if RESULT == 1 %}
 				<div class="alert alert-danger" id="result">
 					<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MTS (Medial Tibial Slope): <mark>{{mts}}</mark></strong>
@@ -216,53 +222,53 @@
 		<h1 class="my-5 text-center">Features</h1>
 		<div class="container p-5 my-5 bg-light text-dark text-center">
 			<label for="selmod" class="form-label">Select Model:
-			{% if session["SELECTED_MODEL"] == "Model #1" %}
+			{% if session["SELECTED_MODEL"] == "RF_Acc_[1, 2, 3, 4, 5]" %}
 				<select class="form-select" id="selmod" name="select_model">
-					<option id="model1" selected>Model #1</option>
-					<option id="model2">Model #2</option>
-					<option id="model3">Model #3</option>
-					<option id="model4">Model #4</option>
-					<option id="model5">Model #5</option>
+					<option id="model1" selected>RF_Acc_[1, 2, 3, 4, 5]</option>
+					<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
+					<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
+					<option id="model4">SVM_F2_model_[2, 3, 4]</option>
+					<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
 				</select>
-			{% elif session["SELECTED_MODEL"] == "Model #2" %}
+			{% elif session["SELECTED_MODEL"] == "SVM_Acc_model_[1, 2, 3, 4, 5]" %}
 				<select class="form-select" id="selmod" name="select_model">
-					<option id="model1">Model #1</option>
-					<option id="model2" selected>Model #2</option>
-					<option id="model3">Model #3</option>
-					<option id="model4">Model #4</option>
-					<option id="model5">Model #5</option>
+					<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
+					<option id="model2" selected>SVM_Acc_model_[1, 2, 3, 4, 5]</option>
+					<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
+					<option id="model4">SVM_F2_model_[2, 3, 4]</option>
+					<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
 				</select>
-			{% elif session["SELECTED_MODEL"] == "Model #3" %}
+			{% elif session["SELECTED_MODEL"] == "SVM_Acc_model_[1, 2, 4, 5]" %}
 				<select class="form-select" id="selmod" name="select_model">
-					<option id="model1">Model #1</option>
-					<option id="model2">Model #2</option>
-					<option id="model3" selected>Model #3</option>
-					<option id="model4">Model #4</option>
-					<option id="model5">Model #5</option>
+					<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
+					<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
+					<option id="model3" selected>SVM_Acc_model_[1, 2, 4, 5]</option>
+					<option id="model4">SVM_F2_model_[2, 3, 4]</option>
+					<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
 				</select>
-			{% elif session["SELECTED_MODEL"] == "Model #4" %}
+			{% elif session["SELECTED_MODEL"] == "SVM_F2_model_[2, 3, 4]" %}
 				<select class="form-select" id="selmod" name="select_model">
-					<option id="model1">Model #1</option>
-					<option id="model2">Model #2</option>
-					<option id="model3">Model #3</option>
-					<option id="model4" selected>Model #4</option>
-					<option id="model5">Model #5</option>
+					<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
+					<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
+					<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
+					<option id="model4" selected>SVM_F2_model_[2, 3, 4]</option>
+					<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
 				</select>
-			{% elif session["SELECTED_MODEL"] == "Model #5" %}
+			{% elif session["SELECTED_MODEL"] == "XGB_F2_model_[1, 2, 3, 4, 5]" %}
 				<select class="form-select" id="selmod" name="select_model">
-					<option id="model1">Model #1</option>
-					<option id="model2">Model #2</option>
-					<option id="model3">Model #3</option>
-					<option id="model4">Model #4</option>
-					<option id="model5" selected>Model #5</option>
+					<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
+					<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
+					<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
+					<option id="model4">SVM_F2_model_[2, 3, 4]</option>
+					<option id="model5" selected>XGB_F2_model_[1, 2, 3, 4, 5]</option>
 				</select>
 			{% else %}
 				<select class="form-select" id="selmod" name="select_model">
-					<option id="model1">Model #1</option>
-					<option id="model2">Model #2</option>
-					<option id="model3">Model #3</option>
-					<option id="model4">Model #4</option>
-					<option id="model5">Model #5</option>
+					<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
+					<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
+					<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
+					<option id="model4">SVM_F2_model_[2, 3, 4]</option>
+					<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
 				</select>
 			{% endif %}
 			<br>
