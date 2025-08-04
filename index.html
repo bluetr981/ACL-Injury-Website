@@ -51,11 +51,43 @@
 		<div class="container p-5 selection-container bg-light text-dark text-center">
 			<label for="selmod" class="form-label">Select Model:
 				<select class="form-select" id="selmod" name="select_model" onchange="returnMenuStatus()">
-					<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
-					<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
-					<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
-					<option id="model4">SVM_F2_model_[2, 3, 4]</option>
-					<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
+					<script>
+						if (sessionStorage.getItem("selected_model") == "RF_Acc_[1, 2, 3, 4, 5]") {
+							<option id="model1" selected>RF_Acc_[1, 2, 3, 4, 5]</option>
+							<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
+							<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
+							<option id="model4">SVM_F2_model_[2, 3, 4]</option>
+							<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
+						}
+						else if (sessionStorage.getItem("selected_model") == "SVM_Acc_Model_[1, 2, 3, 4, 5]") {
+							<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
+							<option id="model2" selected>SVM_Acc_model_[1, 2, 3, 4, 5]</option>
+							<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
+							<option id="model4">SVM_F2_model_[2, 3, 4]</option>
+							<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
+						}
+						else if (sessionStorage.getItem("selected_model") == "SVM_Acc_model_[1, 2, 4, 5]") {
+							<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
+							<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
+							<option id="model3" selected>SVM_Acc_model_[1, 2, 4, 5]</option>
+							<option id="model4">SVM_F2_model_[2, 3, 4]</option>
+							<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
+						else if (sessionStorage.getItem("selected_model") == "SVM_F2_model_[2, 3, 4]") {
+							<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
+							<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
+							<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
+							<option id="model4" selected>SVM_F2_model_[2, 3, 4]</option>
+							<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
+						}
+						else {
+							<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
+							<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
+							<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
+							<option id="model4">SVM_F2_model_[2, 3, 4]</option>
+							<option id="model5" selected>XGB_F2_model_[1, 2, 3, 4, 5]</option>
+						}
+					</script>
+					
 				</select>
 			<br>
 			<center><button type="submit" class="btn btn-danger text-white" id="submit_button">Select Model For Use</button></center>
