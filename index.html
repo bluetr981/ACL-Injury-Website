@@ -89,47 +89,17 @@
 			</select>
 				
 				<script>
-					document.getElementById("cts-label").style.display = "none";
-					document.getElementById("CTS").style.display = "none";
-					document.getElementById("mts-label").style.display = "none";
-					document.getElementById("MTS").style.display = "none";
-					document.getElementById("lts-label").style.display = "none";
-					document.getElementById("LTS").style.display = "none";
-					document.getElementById("mtd-label").style.display = "none";
-					document.getElementById("MTD").style.display = "none";
-					document.getElementById("select-sex").style.display = "none";
-					document.getElementById("selsex").style.display = "none";	
 
 					if (sessionStorage.getItem("model_chosen") == "yes") {
-						if (sessionStorage.getItem("selected_model") == "RF_Acc_[1, 2, 3, 4, 5]" || sessionStorage.getItem("selected_model") == "SVM_Acc_model_[1, 2, 3, 4, 5]" || sessionStorage.getItem("selected_model") == "XGB_F2_model_[1, 2, 3, 4, 5]") {
-							document.getElementById("cts-label").style.display = "block";
-							document.getElementById("CTS").style.display = "block";
-							document.getElementById("mts-label").style.display = "block";
-							document.getElementById("MTS").style.display = "block";
-							document.getElementById("lts-label").style.display = "block";
-							document.getElementById("LTS").style.display = "block";
-							document.getElementById("mtd-label").style.display = "block";
-							document.getElementById("MTD").style.display = "block";
-							document.getElementById("select-sex").style.display = "block";
-							document.getElementById("selsex").style.display = "block";
-						}
-						else if (sessionStorage.getItem("selected_model") == "SVM_Acc_model_[1, 2, 4, 5]") {
-							document.getElementById("cts-label").style.display = "block";
-							document.getElementById("CTS").style.display = "block";
-							document.getElementById("mts-label").style.display = "block";
-							document.getElementById("MTS").style.display = "block";
-							document.getElementById("mtd-label").style.display = "block";
-							document.getElementById("MTD").style.display = "block";
-							document.getElementById("select-sex").style.display = "block";
-							document.getElementById("selsex").style.display = "block";
+						if (sessionStorage.getItem("selected_model") == "SVM_Acc_model_[1, 2, 4, 5]") {
+							document.getElementById("lts-label").style.display = "none";
+							document.getElementById("LTS").style.display = "none";
 						}
 						else {
-							document.getElementById("mts-label").style.display = "block";
-							document.getElementById("MTS").style.display = "block";
-							document.getElementById("lts-label").style.display = "block";
-							document.getElementById("LTS").style.display = "block";
-							document.getElementById("mtd-label").style.display = "block";
-							document.getElementById("MTD").style.display = "block";
+							document.getElementById("cts-label").style.display = "none";
+							document.getElementById("CTS").style.display = "none";
+							document.getElementById("select-sex").style.display = "none";
+							document.getElementById("selsex").style.display = "none";
 						}
 					}
 				</script>
