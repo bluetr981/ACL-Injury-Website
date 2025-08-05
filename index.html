@@ -57,88 +57,87 @@
 				<option id="model4">SVM_F2_model_[2, 3, 4]</option>
 				<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
 			</select>
-			<script>
-				const selectionMenu = document.getElementById("selmod");
-				const selectedChoice = sessionStorage.getItem("selected_model");
+			
+				<script>
+					const selectionMenu = document.getElementById("selmod");
+					const selectedChoice = sessionStorage.getItem("selected_model");
 
-				for (const x of selectionMenu.options) {
-					if (x.label == selectedChoice) {
-						x.selected = true;
-						break;
+					for (const x of selectionMenu.options) {
+						if (x.label == selectedChoice) {
+							x.selected = true;
+							break;
+						}
 					}
-				}
-					
-			</script>
-			<label for="CTS" class="form-label" id="cts-label">Enter <mark>CTS</mark> (Coronal Tibial Slope) in degrees:
+				</script>
+				
+			<label for="CTS" class="form-label" id="cts-label">Enter <mark>CTS</mark> (Coronal Tibial Slope) in degrees:</label>
 			<input type="text" class="form-control" id="CTS" name="CoronalTibialSlope" placeholder="Enter CTS" required>
 			<br>
-			<label for="MTS" class="form-label" id="mts-label">Enter <mark>MTS</mark> (Medial Tibial Slope) in degrees:
+			<label for="MTS" class="form-label" id="mts-label">Enter <mark>MTS</mark> (Medial Tibial Slope) in degrees:</label>
 			<input type="text" class="form-control" id="MTS" name="MedialTibialSlope" placeholder="Enter MTS" required>
 			<br>
-			<label for="LTS" class="form-label" id="lts-label">Enter <mark>LTS</mark> (Lateral Tibial Slope) in degrees:
+			<label for="LTS" class="form-label" id="lts-label">Enter <mark>LTS</mark> (Lateral Tibial Slope) in degrees:</label>
 			<input type="text" class="form-control" id="LTS" name="LateralTibialSlope" placeholder="Enter LTS" required>
 			<br>
-			<label for="MTD" class="form-label" id="mtd-label">Enter <mark>MTD</mark> (Medial Tibial Depth) in degrees:
+			<label for="MTD" class="form-label" id="mtd-label">Enter <mark>MTD</mark> (Medial Tibial Depth) in degrees:</label>
 			<input type="text" class="form-control" id="MTD" name="MedialTibialDepth" placeholder="Enter MTD" required>
 			<br>
-			<label for="selsex" class="form-label" id="select-sex">Select Sex (M/F):
+			<label for="selsex" class="form-label" id="select-sex">Select Sex (M/F):</label>
 			<select class="form-select" id="selsex" name="selectsex">
 				<option>Male</option>
 				<option>Female</option>
 			</select>
-			</label>
+				
+				<script>
+					document.getElementById("cts-label").style.display = "none";
+					document.getElementById("CTS").style.display = "none";
+					document.getElementById("mts-label").style.display = "none";
+					document.getElementById("MTS").style.display = "none";
+					document.getElementById("lts-label").style.display = "none";
+					document.getElementById("LTS").style.display = "none";
+					document.getElementById("mtd-label").style.display = "none";
+					document.getElementById("MTD").style.display = "none";
+					document.getElementById("select-sex").style.display = "none";
+					document.getElementById("selsex").style.display = "none";	
 
-			<script>
-				document.getElementById("cts-label").style.display = "none";
-				document.getElementById("CTS").style.display = "none";
-				document.getElementById("mts-label").style.display = "none";
-				document.getElementById("MTS").style.display = "none";
-				document.getElementById("lts-label").style.display = "none";
-				document.getElementById("LTS").style.display = "none";
-				document.getElementById("mtd-label").style.display = "none";
-				document.getElementById("MTD").style.display = "none";
-				document.getElementById("select-sex").style.display = "none";
-				document.getElementById("selsex").style.display = "none";	
-
-				if (sessionStorage.getItem("model_chosen") == "yes") {
-					if (sessionStorage.getItem("selected_model") == "RF_Acc_[1, 2, 3, 4, 5]" || sessionStorage.getItem("selected_model") == "SVM_Acc_model_[1, 2, 3, 4, 5]" || sessionStorage.getItem("selected_model") == "XGB_F2_model_[1, 2, 3, 4, 5]") {
-						document.getElementById("cts-label").style.display = "block";
-						document.getElementById("CTS").style.display = "block";
-						document.getElementById("mts-label").style.display = "block";
-						document.getElementById("MTS").style.display = "block";
-						document.getElementById("lts-label").style.display = "block";
-						document.getElementById("LTS").style.display = "block";
-						document.getElementById("mtd-label").style.display = "block";
-						document.getElementById("MTD").style.display = "block";
-						document.getElementById("select-sex").style.display = "block";
-						document.getElementById("selsex").style.display = "block";
+					if (sessionStorage.getItem("model_chosen") == "yes") {
+						if (sessionStorage.getItem("selected_model") == "RF_Acc_[1, 2, 3, 4, 5]" || sessionStorage.getItem("selected_model") == "SVM_Acc_model_[1, 2, 3, 4, 5]" || sessionStorage.getItem("selected_model") == "XGB_F2_model_[1, 2, 3, 4, 5]") {
+							document.getElementById("cts-label").style.display = "block";
+							document.getElementById("CTS").style.display = "block";
+							document.getElementById("mts-label").style.display = "block";
+							document.getElementById("MTS").style.display = "block";
+							document.getElementById("lts-label").style.display = "block";
+							document.getElementById("LTS").style.display = "block";
+							document.getElementById("mtd-label").style.display = "block";
+							document.getElementById("MTD").style.display = "block";
+							document.getElementById("select-sex").style.display = "block";
+							document.getElementById("selsex").style.display = "block";
+						}
+						else if (sessionStorage.getItem("selected_model") == "SVM_Acc_model_[1, 2, 4, 5]") {
+							document.getElementById("cts-label").style.display = "block";
+							document.getElementById("CTS").style.display = "block";
+							document.getElementById("mts-label").style.display = "block";
+							document.getElementById("MTS").style.display = "block";
+							document.getElementById("mtd-label").style.display = "block";
+							document.getElementById("MTD").style.display = "block";
+							document.getElementById("select-sex").style.display = "block";
+							document.getElementById("selsex").style.display = "block";
+						}
+						else {
+							document.getElementById("mts-label").style.display = "block";
+							document.getElementById("MTS").style.display = "block";
+							document.getElementById("lts-label").style.display = "block";
+							document.getElementById("LTS").style.display = "block";
+							document.getElementById("mtd-label").style.display = "block";
+							document.getElementById("MTD").style.display = "block";
+						}
 					}
-					else if (sessionStorage.getItem("selected_model") == "SVM_Acc_model_[1, 2, 4, 5]") {
-						document.getElementById("cts-label").style.display = "block";
-						document.getElementById("CTS").style.display = "block";
-						document.getElementById("mts-label").style.display = "block";
-						document.getElementById("MTS").style.display = "block";
-						document.getElementById("mtd-label").style.display = "block";
-						document.getElementById("MTD").style.display = "block";
-						document.getElementById("select-sex").style.display = "block";
-						document.getElementById("selsex").style.display = "block";
-					}
-					else {
-						document.getElementById("mts-label").style.display = "block";
-						document.getElementById("MTS").style.display = "block";
-						document.getElementById("lts-label").style.display = "block";
-						document.getElementById("LTS").style.display = "block";
-						document.getElementById("mtd-label").style.display = "block";
-						document.getElementById("MTD").style.display = "block";
-					}
-				}
-			</script>
+				</script>
 				
 			<br>
 			<center>
 				<button type="submit" class="btn btn-danger text-white" id="submit_button" onclick="checkModelSubmissionStatus()">Select Model For Use</button>
 			</center>
-			<hr>
 		</div>
 	</form>
 	
