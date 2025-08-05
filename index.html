@@ -46,44 +46,43 @@
 	</center>
 </div>
 
-	<form action="https://bluetr981.github.io/ACL-Injury-Website/" method="get">
-		<h1 class="features-display text-center">Features</h1>
-		<div class="container p-5 selection-container bg-light text-dark text-center">
-			<label for="selmod" class="form-label">Select Model:
-			<select class="form-select" id="selmod" name="select_model" onchange="returnMenuStatus()">
-				<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
-				<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
-				<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
-				<option id="model4">SVM_F2_model_[2, 3, 4]</option>
-				<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
-			</select>
-			<br>
-			<script>
-				const selectionMenu = document.getElementById("selmod");
-				const selectedChoice = sessionStorage.getItem("selected_model");
+<form action="https://bluetr981.github.io/ACL-Injury-Website/" method="get">
+	<h1 class="features-display text-center">Features</h1>
+	<div class="container p-5 selection-container bg-light text-dark text-center">
+		<label for="selmod" class="form-label">Select Model:
+		<select class="form-select" id="selmod" name="select_model" onchange="returnMenuStatus()">
+			<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
+			<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
+			<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
+			<option id="model4">SVM_F2_model_[2, 3, 4]</option>
+			<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
+		</select>
+		<br>
+		<script>
+			const selectionMenu = document.getElementById("selmod");
+			const selectedChoice = sessionStorage.getItem("selected_model");
 
-				for (const x of selectionMenu.options) {
-					if (x.value == selectedChoice) {
-						x.selected = true;
-						break;
-					}
+			for (const x of selectionMenu.options) {
+				if (x.value == selectedChoice) {
+					x.selected = true;
+					break;
 				}
-			</script>
+			}
+		</script>
 				
-			<p id="demo">CURRENT MODEL:</p>
+		<p id="demo">CURRENT MODEL:</p>
 				
-			<br>
-		</div>
-		<center>
-			<button type="submit" class="btn btn-danger mt-5 text-white" id="submit_button" onclick="checkModelSubmissionStatus()">Select Model For Use</button>
-		</center>
-	</form>
-
-	<p id="demo"></p>
-	
-	<div class="container-fluid p-3 bg-light website-footer">
-		<footer>© Dr. Naveen Chandrashekhar, Cheng Hao Kao, and Puneet Bhat 2025</footer>
+		<br>
+		
 	</div>
+	<center>
+		<button type="submit" class="btn btn-danger mt-5 text-white" id="submit_button" onclick="checkModelSubmissionStatus()">Select Model For Use</button>
+	</center>
+</form>
+	
+<div class="container-fluid p-3 bg-light website-footer">
+	<footer>© Dr. Naveen Chandrashekhar, Cheng Hao Kao, and Puneet Bhat 2025</footer>
+</div>
 
 </body>
 </html>
