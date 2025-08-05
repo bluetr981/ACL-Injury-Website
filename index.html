@@ -50,66 +50,25 @@
 		<h1 class="features-display text-center">Features</h1>
 		<div class="container p-5 selection-container bg-light text-dark text-center">
 			<label for="selmod" class="form-label">Select Model:
-				<select class="form-select" id="selmod" name="select_model" onchange="returnMenuStatus()">
-					<script>
-						if (sessionStorage.getItem("selected_model") == "RF_Acc_[1, 2, 3, 4, 5]") {
-							<html>
-								<select>
-									<option id="model1" selected>RF_Acc_[1, 2, 3, 4, 5]</option>
-									<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
-									<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
-									<option id="model4">SVM_F2_model_[2, 3, 4]</option>
-									<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
-								</select>
-							</html>
-						}
-						else if (sessionStorage.getItem("selected_model") == "SVM_Acc_model_[1, 2, 3, 4, 5]") {
-							<html>
-								<select>
-									<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
-									<option id="model2" selected>SVM_Acc_model_[1, 2, 3, 4, 5]</option>
-									<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
-									<option id="model4">SVM_F2_model_[2, 3, 4]</option>
-									<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
-								</select>
-							</html>
-						}
-						else if (sessionStorage.getItem("selected_model") == "SVM_Acc_model_[1, 2, 4, 5]") {
-							<html>
-								<select>
-									<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
-									<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
-									<option id="model3" selected>SVM_Acc_model_[1, 2, 4, 5]</option>
-									<option id="model4">SVM_F2_model_[2, 3, 4]</option>
-									<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
-								</select>
-							</html>
-						}
-						else if (sessionStorage.getItem("selected_model") == "SVM_F2_model_[2, 3, 4]") {
-							<html>
-								<select>
-									<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
-									<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
-									<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
-									<option id="model4" selected>SVM_F2_model_[2, 3, 4]</option>
-									<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
-								</select>
-							</html>
-						}
-						else {
-							<html>
-								<select>
-									<option id="model1">RF_Acc_[1, 2, 3, 4, 5]</option>
-									<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
-									<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
-									<option id="model4">SVM_F2_model_[2, 3, 4]</option>
-									<option id="model5" selected>XGB_F2_model_[1, 2, 3, 4, 5]</option>
-								</select>
-							</html>
-						}
-					</script>
+			<select class="form-select" id="selmod" name="select_model" onchange="returnMenuStatus()">
+				<option id="model1" selected>RF_Acc_[1, 2, 3, 4, 5]</option>
+				<option id="model2">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
+				<option id="model3">SVM_Acc_model_[1, 2, 4, 5]</option>
+				<option id="model4">SVM_F2_model_[2, 3, 4]</option>
+				<option id="model5">XGB_F2_model_[1, 2, 3, 4, 5]</option>
+			</select>
+			<script>
+				const selectionMenu = document.getElementById("selmod");
+				const selectedChoice = sessionStorage.getItem("selected_model");
+
+				for (i in selectionMenu.options) {
+					if (i == selectedChoice) {
+						i.selected = true;
+						break;
+					}
+				}
 					
-				</select>
+			</script>
 			<br>
 			<center><button type="submit" class="btn btn-danger text-white" id="submit_button">Select Model For Use</button></center>
 			<hr>
