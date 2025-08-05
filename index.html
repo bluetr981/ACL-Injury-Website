@@ -61,9 +61,9 @@
 				const selectionMenu = document.getElementById("selmod");
 				const selectedChoice = sessionStorage.getItem("selected_model");
 
-				for (i in selectionMenu.options) {
-					if (i == selectedChoice) {
-						i.selected = true;
+				for (const x of selectionMenu.options) {
+					if (x.label == selectedChoice) {
+						x.selected = true;
 						break;
 					}
 				}
