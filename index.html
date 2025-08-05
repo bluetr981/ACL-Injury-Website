@@ -87,27 +87,22 @@
 				<option>Male</option>
 				<option>Female</option>
 			</select>
-				
 				<script>
-
-					if (sessionStorage.getItem("model_chosen") == "yes") {
-						if (sessionStorage.getItem("selected_model") == "SVM_Acc_model_[1, 2, 4, 5]") {
-							document.getElementById("lts-label").style.display = "none";
-							document.getElementById("LTS").style.display = "none";
-						}
-						else {
-							document.getElementById("cts-label").style.display = "none";
-							document.getElementById("CTS").style.display = "none";
-							document.getElementById("select-sex").style.display = "none";
-							document.getElementById("selsex").style.display = "none";
-						}
+					if (sessionStorage.getItem("selected_model") == "SVM_Acc_model_[1, 2, 4, 5]") {
+						document.getElementById("lts-label").style.display = "none";
+						document.getElementById("LTS").style.display = "none";
+					}
+					else if (sessionStorage.getItem("selected_model") == "SVM_F2_model_[2, 3, 4]") {
+						document.getElementById("cts-label").style.display = "none";
+						document.getElementById("CTS").style.display = "none";
+						document.getElementById("select-sex").style.display = "none";
+						document.getElementById("selsex").style.display = "none";
 					}
 				</script>
-				
 			<br>
 		</div>
 			<center>
-				<button type="submit" class="btn btn-danger text-white" id="submit_button" onclick="checkModelSubmissionStatus()">Select Model For Use</button>
+				<button type="submit" class="btn btn-danger mt-5 text-white" id="submit_button" onclick="checkModelSubmissionStatus()">Select Model For Use</button>
 			</center>
 	</form>
 
