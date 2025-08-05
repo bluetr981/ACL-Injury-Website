@@ -63,7 +63,7 @@
 				const selectedChoice = sessionStorage.getItem("selected_model");
 
 				for (const x of selectionMenu.options) {
-					if (x.label == selectedChoice) {
+					if (x.value == selectedChoice) {
 						x.selected = true;
 						break;
 					}
