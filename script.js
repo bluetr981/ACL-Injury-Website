@@ -1,5 +1,3 @@
-sessionStorage.setItem("selected_model", "RF_Acc_[1, 2, 3, 4, 5]");
-
 function returnMenuStatus() {
   let selectionMenuStatus = document.getElementById("selmod").value;
 
