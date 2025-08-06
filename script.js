@@ -1,6 +1,27 @@
 function returnMenuStatus() {
   let selectionMenuStatus = document.getElementById("selmod").value;
   sessionStorage.setItem("selected_model", selectionMenuStatus);
+
+  if (sessionStorage.getItem("CTS") != null) {
+    sessionStorage.removeItem("CTS");
+  }
+
+  if (sessionStorage.getItem("MTS") != null) {
+    sessionStorage.removeItem("MTS");
+  }
+
+  if (sessionStorage.getItem("LTS") != null) {
+    sessionStorage.removeItem("LTS");
+  }
+
+  if (sessionStorage.getItem("MTD") != null) {
+    sessionStorage.removeItem("MTD");
+  }
+
+  if (sessionStorage.getItem("selected-sex") != null) {
+    sessionStorage.removeItem("selected-sex");
+  }
+  
   location.reload();
 }
 
