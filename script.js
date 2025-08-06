@@ -3,19 +3,19 @@ function returnMenuStatus() {
   sessionStorage.setItem("selected_model", selectionMenuStatus);
 
   if (sessionStorage.getItem("CTS-degrees") != null) {
-    sessionStorage.removeItem("CTS");
+    sessionStorage.removeItem("CTS-degrees");
   }
 
   if (sessionStorage.getItem("MTS-degrees") != null) {
-    sessionStorage.removeItem("MTS");
+    sessionStorage.removeItem("MTS-degrees");
   }
 
   if (sessionStorage.getItem("LTS-degrees") != null) {
-    sessionStorage.removeItem("LTS");
+    sessionStorage.removeItem("LTS-degrees");
   }
 
   if (sessionStorage.getItem("MTD-degrees") != null) {
-    sessionStorage.removeItem("MTD");
+    sessionStorage.removeItem("MTD-degrees");
   }
 
   if (sessionStorage.getItem("selected-sex") != null) {
