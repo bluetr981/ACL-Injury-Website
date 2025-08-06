@@ -2,19 +2,19 @@ function returnMenuStatus() {
   let selectionMenuStatus = document.getElementById("selmod").value;
   sessionStorage.setItem("selected_model", selectionMenuStatus);
 
-  if (sessionStorage.getItem("CTS") != null) {
+  if (sessionStorage.getItem("CTS-degrees") != null) {
     sessionStorage.removeItem("CTS");
   }
 
-  if (sessionStorage.getItem("MTS") != null) {
+  if (sessionStorage.getItem("MTS-degrees") != null) {
     sessionStorage.removeItem("MTS");
   }
 
-  if (sessionStorage.getItem("LTS") != null) {
+  if (sessionStorage.getItem("LTS-degrees") != null) {
     sessionStorage.removeItem("LTS");
   }
 
-  if (sessionStorage.getItem("MTD") != null) {
+  if (sessionStorage.getItem("MTD-degrees") != null) {
     sessionStorage.removeItem("MTD");
   }
 
