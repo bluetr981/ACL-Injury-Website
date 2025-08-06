@@ -66,9 +66,9 @@
 		<label for="MTD" class="form-label" id="mtd-label">Enter <mark>MTD</mark> (Medial Tibial Depth) in degrees:</label>
 		<input type="text" class="form-control" id="MTD" name="MedialTibialDepth" placeholder="Enter MTD" onchange="updateMedialTibialDepth()" required>
 		<label for="selsex" class="form-label" id="select-sex">Select Sex (M/F):</label>
-		<select class="form-select" id="selsex" name="selectsex" onchange="updateSelectedSex()" required>
+		<select class="form-select" id="selsex" name="selectsex" onchange="updateSelectedSex()">
 			<option>Male</option>
-			<option>Female</option
+			<option>Female</option>
 		</select>
 		<script>
 			const selectionMenu = document.getElementById("selmod");
