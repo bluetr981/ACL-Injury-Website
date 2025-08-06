@@ -5,26 +5,51 @@ function returnMenuStatus() {
 }
 
 function updateCoronalTibialSlope() {
-  sessionStorage.removeItem("CTS-degrees");
-  sessionStorage.setItem("CTS-degrees", document.getElementById("CTS").value);
+  if (sessionStorage.getItem("CTS-degrees") == null) {
+      sessionStorage.setItem("CTS-degrees", document.getElementById("CTS").value);
+  }
+  else {
+    sessionStorage.removeItem("CTS-degrees");
+    sessionStorage.setItem("CTS-degrees", document.getElementById("CTS").value);
+  }
 }
 
 function updateMedialTibialSlope() {
-  sessionStorage.removeItem("MTS-degrees");
-  sessionStorage.setItem("MTS-degrees", document.getElementById("MTS").value);
+  if (sessionStorage.getItem("MTS-degrees") == null) {
+      sessionStorage.setItem("MTS-degrees", document.getElementById("MTS").value);
+  }
+  else {
+    sessionStorage.removeItem("MTS-degrees");
+    sessionStorage.setItem("MTS-degrees", document.getElementById("MTS").value);
+  }
 }
 
 function updateLateralTibialSlope() {
-  sessionStorage.removeItem("LTS-degrees");
-  sessionStorage.setItem("LTS-degrees", document.getElementById("LTS").value);
+  if (sessionStorage.getItem("LTS-degrees") == null) {
+      sessionStorage.setItem("LTS-degrees", document.getElementById("LTS").value);
+  }
+  else {
+    sessionStorage.removeItem("LTS-degrees");
+    sessionStorage.setItem("LTS-degrees", document.getElementById("LTS").value);
+  }
 }
 
 function updateMedialTibialDepth() {
-  sessionStorage.removeItem("MTD-degrees");
-  sessionStorage.setItem("MTD-degrees", document.getElementById("MTD").value);
+  if (sessionStorage.getItem("MTD-degrees") == null) {
+      sessionStorage.setItem("MTD-degrees", document.getElementById("MTD").value);
+  }
+  else {
+    sessionStorage.removeItem("MTD-degrees");
+    sessionStorage.setItem("MTD-degrees", document.getElementById("MTD").value);
+  }
 }
 
 function updateSelectedSex() {
-  sessionStorage.removeItem("selected-sex");
-  sessionStorage.setItem("selected-sex", document.getElementById("selsex").value);
+  if (sessionStorage.getItem("selected-sex") == null) {
+      sessionStorage.setItem("selected-sex", document.getElementById("selsex").value);
+  }
+  else {
+    sessionStorage.removeItem("selected-sex");
+    sessionStorage.setItem("selected-sex", document.getElementById("selsex").value);
+  }
 }
