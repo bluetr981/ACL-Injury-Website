@@ -1,8 +1,8 @@
-sessionStorage.setItem("CTS-degrees", document.getElementById("CTS").value);
-sessionStorage.setItem("MTS-degrees", document.getElementById("MTS").value);
-sessionStorage.setItem("LTS-degrees", document.getElementById("LTS").value);
-sessionStorage.setItem("MTD-degrees", document.getElementById("MTD").value);
-sessionStorage.setItem("selected-sex", document.getElementById("selsex").value);
+sessionStorage.setItem("CTS-degrees", "");
+sessionStorage.setItem("MTS-degrees", "");
+sessionStorage.setItem("LTS-degrees", "");
+sessionStorage.setItem("MTD-degrees", "");
+sessionStorage.setItem("selected-sex", "");
 
 function returnMenuStatus() {
   let selectionMenuStatus = document.getElementById("selmod").value;
