@@ -1,9 +1,3 @@
-sessionStorage.setItem("CTS-degrees", "");
-sessionStorage.setItem("MTS-degrees", "");
-sessionStorage.setItem("LTS-degrees", "");
-sessionStorage.setItem("MTD-degrees", "");
-sessionStorage.setItem("selected-sex", "Male");
-
 function returnMenuStatus() {
   let selectionMenuStatus = document.getElementById("selmod").value;
   sessionStorage.setItem("selected_model", selectionMenuStatus);
