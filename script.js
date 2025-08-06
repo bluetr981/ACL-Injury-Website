@@ -22,7 +22,7 @@ function returnMenuStatus() {
     sessionStorage.removeItem("selected-sex");
   }
   
-  location.reload();
+  location.href("https://bluetr981.github.io/ACL-Injury-Website/");
 }
 
 function updateCoronalTibialSlope() {
