@@ -66,15 +66,15 @@
 			<option id="model5" value="XGB_F2_model_[1, 2, 3, 4, 5]">XGB_F2_model_[1, 2, 3, 4, 5]</option>
 		</select>
 		<label for="CTS" class="form-label form-label-spacer" id="cts-label">Enter <mark>CTS</mark> (Coronal Tibial Slope) in degrees:</label>
-		<input type="text" class="form-control" id="CTS" name="CoronalTibialSlope" value="null" placeholder="Enter CTS" onchange="updateCoronalTibialSlope()" required>
+		<input type="text" class="form-control" id="CTS" name="CoronalTibialSlope" value="null" placeholder="Enter CTS" onchange="updateCoronalTibialSlope()">
 		<label for="MTS" class="form-label form-label-spacer" id="mts-label">Enter <mark>MTS</mark> (Medial Tibial Slope) in degrees:</label>
 		<input type="text" class="form-control" id="MTS" name="MedialTibialSlope" placeholder="Enter MTS" onchange="updateMedialTibialSlope()" required>
 		<label for="LTS" class="form-label form-label-spacer" id="lts-label">Enter <mark>LTS</mark> (Lateral Tibial Slope) in degrees:</label>
-		<input type="text" class="form-control" id="LTS" name="LateralTibialSlope" value="null" placeholder="Enter LTS" onchange="updateLateralTibialSlope()" required>
+		<input type="text" class="form-control" id="LTS" name="LateralTibialSlope" value="null" placeholder="Enter LTS" onchange="updateLateralTibialSlope()">
 		<label for="MTD" class="form-label form-label-spacer" id="mtd-label">Enter <mark>MTD</mark> (Medial Tibial Depth) in degrees:</label>
 		<input type="text" class="form-control" id="MTD" name="MedialTibialDepth" value="null" placeholder="Enter MTD" onchange="updateMedialTibialDepth()" required>
 		<label for="selsex" class="form-label form-label-spacer" id="select-sex">Select Sex (M/F):</label>
-		<select class="form-select" id="selsex" name="selectsex" onchange="updateSelectedSex()" required>
+		<select class="form-select" id="selsex" name="selectsex" onchange="updateSelectedSex()">
 			<option>Male</option>
 			<option>Female</option>
 		</select>
@@ -91,13 +91,17 @@
 
 			if (selectedChoice == "SVM_Acc_model_[1, 2, 4, 5]") {
 				document.getElementById("CTS").value = "";
+				document.getElementById("CTS").required = true;
+				
 				document.getElementById("selsex").value = "";
+				document.getElementById.required = true;
 				
 				document.getElementById("lts-label").style.display = "none";
 				document.getElementById("LTS").style.display = "none";
 			}
 			else if (selectedChoice == "SVM_F2_model_[2, 3, 4]") {
 				document.getElementById("LTS").value = "";
+				document.getElementById("LTS").required = true;
 				
 				document.getElementById("cts-label").style.display = "none";
 				document.getElementById("CTS").style.display = "none";
@@ -108,6 +112,10 @@
 				document.getElementById("CTS").value = "";
 				document.getElementById("LTS").value = "";
 				document.getElementById("selsex").value = "";
+				
+				document.getElementById("CTS").required = false;
+				document.getElementById("LTS").required = false;
+				document.getElementById("selsex").required = false;
 			}
 			
 			document.getElementById("CTS").value = sessionStorage.getItem("CTS-degrees");
