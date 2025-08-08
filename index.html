@@ -92,9 +92,12 @@
 			if (selectedChoice == "SVM_Acc_model_[1, 2, 4, 5]") {
 				document.getElementById("CTS").value = "";
 				document.getElementById("CTS").required = true;
-				
 				document.getElementById("selsex").value = "";
 				document.getElementById.required = true;
+
+				if (document.getElementById("LTS").required == true) {
+					document.getElementById("LTS").required = false;
+				}
 				
 				document.getElementById("lts-label").style.display = "none";
 				document.getElementById("LTS").style.display = "none";
@@ -102,7 +105,15 @@
 			else if (selectedChoice == "SVM_F2_model_[2, 3, 4]") {
 				document.getElementById("LTS").value = "";
 				document.getElementById("LTS").required = true;
-				
+
+				if (document.getElementById("CTS").required == true) {
+					document.getElementById("CTS").required = false;
+				}
+
+				if (document.getElementById("selsex").required == true) {
+					document.getElementById("selsex").required = false;
+				}
+
 				document.getElementById("cts-label").style.display = "none";
 				document.getElementById("CTS").style.display = "none";
 				document.getElementById("select-sex").style.display = "none";
