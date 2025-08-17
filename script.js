@@ -79,12 +79,18 @@ function fetchModelPrediction() {
     sessionStorage.removeItem("RESULT");
   }
 
+  sessionStorage.setItem("RESULT", int(retrievePrediction()[-1]));
+  
+}
+
+async function retrievePrediction() {
   var response;
   
   switch(sessionStorage.getItem("selected-model")) {
     case "RF_Acc_[1, 2, 3, 4, 5]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "GET",
+        header: {'Content-Type:', 'application/json'}
         body: JSON.stringify({"selected-model":"models/trained_RF_Acc_[1, 2, 3, 4, 5].joblib",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
                               "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
@@ -92,13 +98,11 @@ function fetchModelPrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
-
-      sessionStorage.setItem("RESULT", response[-1]);
-
       break;
     case "SVM_Acc_model_[1, 2, 3, 4, 5]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz, {
         method: "GET",
+        header: {'Content-Type:', 'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_SVM_Acc_model_[1, 2, 3, 4, 5].joblib",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
                               "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
@@ -106,13 +110,11 @@ function fetchModelPrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
-
-      sessionStorage.setItem("RESULT", response[-1]);
-
       break;
     case "SVM_Acc_model_[1, 2, 4, 5]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "GET",
+        header: {'Content-Type:', 'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_SVM_Acc_model_[1, 2, 4, 5].joblib",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
                               "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
@@ -120,13 +122,11 @@ function fetchModelPrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
-
-      sessionStorage.setItem("RESULT", response[-1]);
-
       break;
     case "SVM_F2_model_[2, 3, 4]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "GET",
+        header: {'Content-Type:', 'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_SVM_F2_model_[2, 3, 4].joblib",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
                               "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
@@ -134,13 +134,11 @@ function fetchModelPrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
-
-      sessionStorage.setItem("RESULT", response[-1]);
-
       break;
     case "XGB_F2_model_[1, 2, 3, 4, 5]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "GET",
+        header: {'Content-Type:', 'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_XGB_F2_model_[1, 2, 3, 4, 5].json",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
                               "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
@@ -148,10 +146,6 @@ function fetchModelPrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
-  
-      sessionStorage.setItem("RESULT", response[-1]);
-
       break;
   }
 }
-  
