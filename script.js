@@ -148,4 +148,5 @@ async function retrievePrediction() {
       });
       break;
   }
+  return response;
 }
