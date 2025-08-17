@@ -90,6 +90,9 @@ function fetchModelPrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
+
+      sessionStorage.setItem("RESULT", response[-1]);
+
       break;
     case "SVM_Acc_model_[1, 2, 3, 4, 5]":
       const response = fetch('https://acl-frameworkapitesting.onrender.com/healthz, {
@@ -101,6 +104,9 @@ function fetchModelPrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
+
+      sessionStorage.setItem("RESULT", response[-1]);
+
       break;
     case "SVM_Acc_model_[1, 2, 4, 5]":
       const response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
@@ -112,6 +118,9 @@ function fetchModelPrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
+
+      sessionStorage.setItem("RESULT", response[-1]);
+
       break;
     case "SVM_F2_model_[2, 3, 4]":
       const response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
@@ -123,6 +132,9 @@ function fetchModelPrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
+
+      sessionStorage.setItem("RESULT", response[-1]);
+
       break;
     case "XGB_F2_model_[1, 2, 3, 4, 5]":
       const response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
@@ -134,8 +146,10 @@ function fetchModelPrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
+  
+      sessionStorage.setItem("RESULT", response[-1]);
+
       break;
   }
-  sessionStorage.setItem("RESULT", response[-1]);
 }
   
