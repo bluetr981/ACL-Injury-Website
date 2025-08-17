@@ -79,8 +79,9 @@ function fetchModelPrediction() {
     sessionStorage.removeItem("RESULT");
   }
 
-  sessionStorage.setItem("RESULT", int(retrievePrediction()[-1]));
+  result = await retrievePrediction();
   
+  sessionStorage.setItem("RESULT", result);
 }
 
 async function retrievePrediction() {
@@ -88,7 +89,7 @@ async function retrievePrediction() {
   
   switch(sessionStorage.getItem("selected-model")) {
     case "RF_Acc_[1, 2, 3, 4, 5]":
-      response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
+      response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_RF_Acc_[1, 2, 3, 4, 5].joblib",
@@ -148,5 +149,5 @@ async function retrievePrediction() {
       });
       break;
   }
-  return response;
+  return response.text();
 }
