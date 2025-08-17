@@ -54,7 +54,7 @@
 	</center>
 </div>
 
-<form action="https://bluetr981.github.io/ACL-Injury-Website/" onsubmit="fetchModelPrediction()" method="post">
+<form action="https://bluetr981.github.io/ACL-Injury-Website/" method="get">
 	<h1 class="features-display text-center">Features</h1>
 	<div class="container p-5 selection-container bg-light text-dark text-center">
 		<label for="selmod" class="form-label">Select Model:</label>
@@ -137,7 +137,7 @@
 		</script>				
 	</div>
 	<center>
-		<button type="submit" class="btn btn-danger mt-5 text-white" id="submit_button">Predict Outcome</button>
+		<button type="submit" class="btn btn-danger mt-5 text-white" id="submit_button" onclick="fetchModelPrediction()">Predict Outcome</button>
 	</center>
 </form>
 
