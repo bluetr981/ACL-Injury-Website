@@ -89,7 +89,7 @@ function fetchModelPrediction() {
                               "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
-      )};
+      });
       break;
     case "SVM_Acc_model_[1, 2, 3, 4, 5]":
       const response = fetch('https://acl-frameworkapitesting.onrender.com/healthz, {
@@ -100,7 +100,7 @@ function fetchModelPrediction() {
                               "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
-      )};
+  });
       break;
     case "SVM_Acc_model_[1, 2, 4, 5]":
       const response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
@@ -111,7 +111,7 @@ function fetchModelPrediction() {
                               "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
-      )};
+      });
       break;
     case "SVM_F2_model_[2, 3, 4]":
       const response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
@@ -122,7 +122,7 @@ function fetchModelPrediction() {
                               "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
-      )};
+      });
       break;
     case "XGB_F2_model_[1, 2, 3, 4, 5]":
       const response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
@@ -133,7 +133,7 @@ function fetchModelPrediction() {
                               "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
-      )};
+      });
       break;
   }
   sessionStorage.setItem("RESULT", response[-1]);
