@@ -134,7 +134,6 @@
 			document.getElementById("LTS").value = sessionStorage.getItem("LTS-degrees");
 			document.getElementById("MTD").value = sessionStorage.getItem("MTD-degrees");
 			document.getElementById("selsex").value = sessionStorage.getItem("selected-sex");
-
 		</script>				
 	</div>
 	<center>
@@ -146,19 +145,33 @@
 
 <hr>
 	
-<div class="container">
+<div class="container" id="unlikely-alert">
 	<div class="alert alert-success mt-5">
 		<h2 class="text-center">Verdict: Unlikely</h2>
 		<p>Given the following features, it is unlikely that the patient will obtain an ACL injury when participating in sports or any other related activities.</p>
 	</div>
 </div>
 
-<div class="container">
+<div class="container" id="likely-alert">
 	<div class="alert alert-danger mt-5">
 		<h2 class="text-center">Verdict: Likely</h2>
 		<p>Given the following values for the features required, it is likely that the patient will obtain an ACL injury when participating in sports or any other related activities.</p>
 	</div>
 </div>
+
+<script>
+	const UNLIKELY_RESULT = 0;
+	const LIKELY_RESULT = 1;
+	
+	if (sessionStorage.getItem("RESULT") != null) {
+		if (sessionStorage.getItem("RESULT") == UNLIKELY_RESULT) {
+			document.getElementById("likely-alert").style.display = "none";
+		}
+		else {
+			document.getElementById("unlikely-alert").style.display = "none";
+		}
+	}
+</script>
 	
 <div class="container-fluid p-3 bg-light website-footer">
 	<footer>© Dr. Naveen Chandrashekhar, Cheng Hao Kao, and Puneet Bhat 2025</footer>
