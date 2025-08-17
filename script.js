@@ -79,7 +79,7 @@ function fetchModelPrediction() {
     sessionStorage.removeItem("RESULT");
   }
   
-  switch(sessionStorage.getItem("selected-model") {
+  switch(sessionStorage.getItem("selected-model")) {
     case "RF_Acc_[1, 2, 3, 4, 5]":
       const response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
         method: "GET",
