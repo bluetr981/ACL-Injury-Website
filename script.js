@@ -74,3 +74,61 @@ function updateSelectedSex() {
     sessionStorage.setItem("selected-sex", document.getElementById("selsex").value);
   }
 }
+
+function fetchModelPrediction() {
+  switch(sessionStorage.getItem("selected-model") {
+    case "RF_Acc_[1, 2, 3, 4, 5]":
+      const response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
+        method: "GET",
+        body: JSON.stringify({"selected-model":"models/trained_RF_Acc_[1, 2, 3, 4, 5].joblib",
+                              "CoronalTibialSlope":sessionStorage.getItem("CoronalTibialSlope"),
+                              "MedialTibialSlope":sessionStorage.getItem("MedialTibialSlope"),
+                              "LateralTibialSlope":sessionStorage.getItem("LateralTibialSlope"), 
+                              "MedialTibialDepth":sessionStorage.getItem("MedialTibialDepth"),
+                              "selected-sex":sessionStorage.getItem("selected-sex")})
+      }
+    case "SVM_Acc_model_[1, 2, 3, 4, 5]":
+      const response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
+        method: "GET",
+        body: JSON.stringify({"selected-model":"models/trained_SVM_Acc_model_[1, 2, 3, 4, 5].joblib",
+                              "CoronalTibialSlope":sessionStorage.getItem("CoronalTibialSlope"),
+                              "MedialTibialSlope":sessionStorage.getItem("MedialTibialSlope"),
+                              "LateralTibialSlope":sessionStorage.getItem("LateralTibialSlope"), 
+                              "MedialTibialDepth":sessionStorage.getItem("MedialTibialDepth"),
+                              "selected-sex":sessionStorage.getItem("selected-sex")})
+      }
+    case "SVM_Acc_model_[1, 2, 4, 5]":
+      const response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
+        method: "GET",
+        body: JSON.stringify({"selected-model":"models/trained_SVM_Acc_model_[1, 2, 4, 5].joblib",
+                              "CoronalTibialSlope":sessionStorage.getItem("CoronalTibialSlope"),
+                              "MedialTibialSlope":sessionStorage.getItem("MedialTibialSlope"),
+                              "LateralTibialSlope":sessionStorage.getItem("LateralTibialSlope"), 
+                              "MedialTibialDepth":sessionStorage.getItem("MedialTibialDepth"),
+                              "selected-sex":sessionStorage.getItem("selected-sex")})
+      }
+    case "SVM_F2_model_[2, 3, 4]":
+      const response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
+        method: "GET",
+        body: JSON.stringify({"selected-model":"models/trained_SVM_F2_model_[2, 3, 4].joblib",
+                              "CoronalTibialSlope":sessionStorage.getItem("CoronalTibialSlope"),
+                              "MedialTibialSlope":sessionStorage.getItem("MedialTibialSlope"),
+                              "LateralTibialSlope":sessionStorage.getItem("LateralTibialSlope"), 
+                              "MedialTibialDepth":sessionStorage.getItem("MedialTibialDepth"),
+                              "selected-sex":sessionStorage.getItem("selected-sex")})
+      }
+    case "XGB_F2_model_[1, 2, 3, 4, 5]":
+      const response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
+        method: "GET",
+        body: JSON.stringify({"selected-model":"models/trained_XGB_F2_model_[1, 2, 3, 4, 5].json",
+                              "CoronalTibialSlope":sessionStorage.getItem("CoronalTibialSlope"),
+                              "MedialTibialSlope":sessionStorage.getItem("MedialTibialSlope"),
+                              "LateralTibialSlope":sessionStorage.getItem("LateralTibialSlope"), 
+                              "MedialTibialDepth":sessionStorage.getItem("MedialTibialDepth"),
+                              "selected-sex":sessionStorage.getItem("selected-sex")})
+      }
+  }
+
+  sessionStorage.setItem("RESULT", response[-1]);
+}
+  
