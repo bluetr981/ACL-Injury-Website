@@ -90,7 +90,7 @@ async function retrievePrediction() {
     case "RF_Acc_[1, 2, 3, 4, 5]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
-        header: {'Content-Type:', 'application/json'}
+        header: {'Content-Type', 'application/json'}
         body: JSON.stringify({"selected-model":"models/trained_RF_Acc_[1, 2, 3, 4, 5].joblib",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
                               "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
@@ -102,7 +102,7 @@ async function retrievePrediction() {
     case "SVM_Acc_model_[1, 2, 3, 4, 5]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz, {
         method: "POST",
-        header: {'Content-Type:', 'application/json'},
+        header: {'Content-Type', 'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_SVM_Acc_model_[1, 2, 3, 4, 5].joblib",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
                               "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
@@ -114,7 +114,7 @@ async function retrievePrediction() {
     case "SVM_Acc_model_[1, 2, 4, 5]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
-        header: {'Content-Type:', 'application/json'},
+        header: {'Content-Type', 'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_SVM_Acc_model_[1, 2, 4, 5].joblib",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
                               "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
@@ -126,7 +126,7 @@ async function retrievePrediction() {
     case "SVM_F2_model_[2, 3, 4]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
-        header: {'Content-Type:', 'application/json'},
+        header: {'Content-Type', 'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_SVM_F2_model_[2, 3, 4].joblib",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
                               "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
@@ -138,7 +138,7 @@ async function retrievePrediction() {
     case "XGB_F2_model_[1, 2, 3, 4, 5]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
-        header: {'Content-Type:', 'application/json'},
+        header: {'Content-Type', 'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_XGB_F2_model_[1, 2, 3, 4, 5].json",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
                               "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
