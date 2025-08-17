@@ -100,7 +100,7 @@ async function retrievePrediction() {
       });
       break;
   case "SVM_Acc_model_[1, 2, 3, 4, 5]":
-      response = fetch('https://acl-frameworkapitesting.onrender.com/healthz, {
+      response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_SVM_Acc_model_[1, 2, 3, 4, 5].joblib",
