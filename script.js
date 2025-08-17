@@ -81,7 +81,7 @@ function fetchModelPrediction() {
   
   switch(sessionStorage.getItem("selected-model")) {
     case "RF_Acc_[1, 2, 3, 4, 5]":
-      const response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
+      const response = fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
         method: "GET",
         body: JSON.stringify({"selected-model":"models/trained_RF_Acc_[1, 2, 3, 4, 5].joblib",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
@@ -92,7 +92,7 @@ function fetchModelPrediction() {
       }
       break;
     case "SVM_Acc_model_[1, 2, 3, 4, 5]":
-      const response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
+      const response = fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
         method: "GET",
         body: JSON.stringify({"selected-model":"models/trained_SVM_Acc_model_[1, 2, 3, 4, 5].joblib",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
@@ -103,7 +103,7 @@ function fetchModelPrediction() {
       }
       break;
     case "SVM_Acc_model_[1, 2, 4, 5]":
-      const response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
+      const response = fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
         method: "GET",
         body: JSON.stringify({"selected-model":"models/trained_SVM_Acc_model_[1, 2, 4, 5].joblib",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
@@ -114,7 +114,7 @@ function fetchModelPrediction() {
       }
       break;
     case "SVM_F2_model_[2, 3, 4]":
-      const response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
+      const response = fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
         method: "GET",
         body: JSON.stringify({"selected-model":"models/trained_SVM_F2_model_[2, 3, 4].joblib",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
@@ -125,7 +125,7 @@ function fetchModelPrediction() {
       }
       break;
     case "XGB_F2_model_[1, 2, 3, 4, 5]":
-      const response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
+      const response = fetch('https://acl-frameworkapitesting.onrender.com/healthz') {
         method: "GET",
         body: JSON.stringify({"selected-model":"models/trained_XGB_F2_model_[1, 2, 3, 4, 5].json",
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
