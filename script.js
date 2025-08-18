@@ -79,7 +79,7 @@ function fetchModelPrediction() {
     sessionStorage.removeItem("RESULT");
   }
 
-  result_needed = await retrievePrediction();
+  const result_needed = await retrievePrediction();
 
   console.log(result_needed);
 }
