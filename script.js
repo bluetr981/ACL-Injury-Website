@@ -74,7 +74,7 @@ function updateSelectedSex() {
   }
 }
 
-async function retrievePrediction() {
+/*async function retrievePrediction() {
   var response;
   
   response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
@@ -93,4 +93,4 @@ async function retrievePrediction() {
   sessionStorage.setItem("RESULT", prediction);
   
   return prediction;
-}
+}*/
