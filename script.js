@@ -79,7 +79,9 @@ function fetchModelPrediction() {
     sessionStorage.removeItem("RESULT");
   }
 
-  result_needed = retrievePrediction().then(result => sessionStorage.setItem("RESULT", result));
+  result_needed = await retrievePrediction();
+
+  console.log(result_needed);
 }
 
 async function retrievePrediction() {
