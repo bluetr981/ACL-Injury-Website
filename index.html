@@ -59,11 +59,11 @@
 	<div class="container p-5 selection-container bg-light text-dark text-center">
 		<label for="selmod" class="form-label">Select Model:</label>
 		<select class="form-select" id="selmod" name="select_model" onchange="returnMenuStatus()">
-			<option id="model1" value="RF_Acc_[1, 2, 3, 4, 5]">RF_Acc_[1, 2, 3, 4, 5]</option>
-			<option id="model2" value="SVM_Acc_model_[1, 2, 3, 4, 5]">SVM_Acc_model_[1, 2, 3, 4, 5]</option>
-			<option id="model3" value="SVM_Acc_model_[1, 2, 4, 5]">SVM_Acc_model_[1, 2, 4, 5]</option>
-			<option id="model4" value="SVM_F2_model_[2, 3, 4]">SVM_F2_model_[2, 3, 4]</option>
-			<option id="model5" value="XGB_F2_model_[1, 2, 3, 4, 5]">XGB_F2_model_[1, 2, 3, 4, 5]</option>
+			<option id="model1" value="RF_Acc_[1, 2, 3, 4, 5].joblib">RF_Acc_[1, 2, 3, 4, 5].joblib</option>
+			<option id="model2" value="SVM_Acc_model_[1, 2, 3, 4, 5].joblib">SVM_Acc_model_[1, 2, 3, 4, 5].joblib</option>
+			<option id="model3" value="SVM_Acc_model_[1, 2, 4, 5].joblib">SVM_Acc_model_[1, 2, 4, 5].joblib</option>
+			<option id="model4" value="SVM_F2_model_[2, 3, 4].joblib">SVM_F2_model_[2, 3, 4].joblib</option>
+			<option id="model5" value="XGB_F2_model_[1, 2, 3, 4, 5].json">XGB_F2_model_[1, 2, 3, 4, 5].json</option>
 		</select>
 		<label for="CTS" class="form-label form-label-spacer" id="cts-label">Enter <mark>CTS</mark> (Coronal Tibial Slope) in degrees:</label>
 		<input type="text" class="form-control" id="CTS" name="CoronalTibialSlope" value="null" placeholder="Enter CTS" onchange="updateCoronalTibialSlope()">
