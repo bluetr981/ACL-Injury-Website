@@ -135,7 +135,6 @@ async function retrievePrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
-      .then(response => response.text());
       break;
     case "XGB_F2_model_[1, 2, 3, 4, 5]":
       response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
