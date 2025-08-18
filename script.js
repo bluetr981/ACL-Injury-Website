@@ -98,7 +98,7 @@ async function retrievePrediction() {
                               "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
-      });
+      })
       .then(response => response.text());
       break;
   case "SVM_Acc_model_[1, 2, 3, 4, 5]":
@@ -111,7 +111,7 @@ async function retrievePrediction() {
                               "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
-      });
+      })
       .then(response => response.text());
       break;
     case "SVM_Acc_model_[1, 2, 4, 5]":
@@ -124,7 +124,7 @@ async function retrievePrediction() {
                               "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
-      });
+      })
       .then(response => response.text());
       break;
     case "SVM_F2_model_[2, 3, 4]":
@@ -137,7 +137,7 @@ async function retrievePrediction() {
                               "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
-      });
+      })
       .then(response => response.text());
       break;
     case "XGB_F2_model_[1, 2, 3, 4, 5]":
@@ -150,7 +150,7 @@ async function retrievePrediction() {
                               "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
-      });
+      })
       .then(response => response.text());
       break;
   }
