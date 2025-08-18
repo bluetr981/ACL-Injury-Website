@@ -89,7 +89,7 @@ async function retrievePrediction() {
   
   switch(sessionStorage.getItem("selected-model")) {
     case "RF_Acc_[1, 2, 3, 4, 5]":
-      response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
+      response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_RF_Acc_[1, 2, 3, 4, 5].joblib",
@@ -99,9 +99,10 @@ async function retrievePrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
+          .then(response => response.text());
       break;
   case "SVM_Acc_model_[1, 2, 3, 4, 5]":
-      response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
+      response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_SVM_Acc_model_[1, 2, 3, 4, 5].joblib",
@@ -111,9 +112,10 @@ async function retrievePrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
+          .then(response => response.text());
       break;
     case "SVM_Acc_model_[1, 2, 4, 5]":
-      response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
+      response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_SVM_Acc_model_[1, 2, 4, 5].joblib",
@@ -123,9 +125,10 @@ async function retrievePrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
+          .then(response => response.text());
       break;
     case "SVM_F2_model_[2, 3, 4]":
-      response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
+      response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_SVM_F2_model_[2, 3, 4].joblib",
@@ -135,9 +138,10 @@ async function retrievePrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
+          .then(response => response.text());
       break;
     case "XGB_F2_model_[1, 2, 3, 4, 5]":
-      response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
+      response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_XGB_F2_model_[1, 2, 3, 4, 5].json",
@@ -147,7 +151,8 @@ async function retrievePrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
+        .then(response => response.text());
       break;
   }
-  return response.text();
+  return response;
 }
