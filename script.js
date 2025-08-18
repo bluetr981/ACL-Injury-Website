@@ -74,14 +74,14 @@ function updateSelectedSex() {
   }
 }
 
-function fetchModelPrediction() {
+async function fetchModelPrediction() {
   if (sessionStorage.getItem("RESULT") != null) {
     sessionStorage.removeItem("RESULT");
   }
 
   const result_needed = await retrievePrediction();
 
-  console.log(result_needed);
+  sessionStorage.setItem("RESULT", Number(result_needed));
 }
 
 async function retrievePrediction() {
