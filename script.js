@@ -72,85 +72,25 @@ function updateSelectedSex() {
     sessionStorage.removeItem("selected-sex");
     sessionStorage.setItem("selected-sex", document.getElementById("selsex").value);
   }
-}
-
-async function fetchModelPrediction() {
-  if (sessionStorage.getItem("RESULT") != null) {
-    sessionStorage.removeItem("RESULT");
-  }
-
-  const result_needed = await retrievePrediction();
-
-  sessionStorage.setItem("RESULT", Number(result_needed));
-}
+}d
 
 async function retrievePrediction() {
   var response;
   
-  switch(sessionStorage.getItem("selected-model")) {
-    case "RF_Acc_[1, 2, 3, 4, 5]":
-      response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
+  response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
         headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({"selected-model":"models/trained_RF_Acc_[1, 2, 3, 4, 5].joblib",
+        body: JSON.stringify({"selected-model":"models/trained_" + sessionStorage.getItem("selected-model"),
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
                               "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
                               "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
-      break;
-  case "SVM_Acc_model_[1, 2, 3, 4, 5]":
-      response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
-        method: "POST",
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({"selected-model":"models/trained_SVM_Acc_model_[1, 2, 3, 4, 5].joblib",
-                              "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
-                              "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
-                              "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
-                              "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
-                              "selected-sex":sessionStorage.getItem("selected-sex")})
-      });
-      break;
-    case "SVM_Acc_model_[1, 2, 4, 5]":
-      response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
-        method: "POST",
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({"selected-model":"models/trained_SVM_Acc_model_[1, 2, 4, 5].joblib",
-                              "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
-                              "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
-                              "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
-                              "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
-                              "selected-sex":sessionStorage.getItem("selected-sex")})
-      });
-      break;
-    case "SVM_F2_model_[2, 3, 4]":
-      response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
-        method: "POST",
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({"selected-model":"models/trained_SVM_F2_model_[2, 3, 4].joblib",
-                              "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
-                              "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
-                              "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
-                              "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
-                              "selected-sex":sessionStorage.getItem("selected-sex")})
-      });
-      break;
-    case "XGB_F2_model_[1, 2, 3, 4, 5]":
-      response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
-        method: "POST",
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({"selected-model":"models/trained_XGB_F2_model_[1, 2, 3, 4, 5].json",
-                              "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
-                              "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
-                              "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
-                              "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
-                              "selected-sex":sessionStorage.getItem("selected-sex")})
-      });
-      break;
-  }
-
+  
   const prediction = await response.text()
+
+  sessionStorage.setItem("RESULT", prediction);
   
   return prediction;
 }
