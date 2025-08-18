@@ -72,7 +72,7 @@ function updateSelectedSex() {
     sessionStorage.removeItem("selected-sex");
     sessionStorage.setItem("selected-sex", document.getElementById("selsex").value);
   }
-}d
+}
 
 async function retrievePrediction() {
   var response;
