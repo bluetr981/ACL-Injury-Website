@@ -99,7 +99,7 @@ async function retrievePrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
-          .then(response => response.text());
+      .then(response => response.text());
       break;
   case "SVM_Acc_model_[1, 2, 3, 4, 5]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
@@ -112,7 +112,7 @@ async function retrievePrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
-          .then(response => response.text());
+      .then(response => response.text());
       break;
     case "SVM_Acc_model_[1, 2, 4, 5]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
@@ -125,7 +125,7 @@ async function retrievePrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
-          .then(response => response.text());
+      .then(response => response.text());
       break;
     case "SVM_F2_model_[2, 3, 4]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
@@ -138,7 +138,7 @@ async function retrievePrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
-          .then(response => response.text());
+      .then(response => response.text());
       break;
     case "XGB_F2_model_[1, 2, 3, 4, 5]":
       response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
@@ -151,7 +151,7 @@ async function retrievePrediction() {
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
-        .then(response => response.text());
+      .then(response => response.text());
       break;
   }
   return response;
