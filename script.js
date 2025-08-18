@@ -80,8 +80,6 @@ function fetchModelPrediction() {
   }
 
   result_needed = retrievePrediction().then(result => sessionStorage.setItem("RESULT", result));
-  
-  sessionStorage.setItem("RESULT", result_needed);
 }
 
 async function retrievePrediction() {
