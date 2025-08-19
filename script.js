@@ -21,6 +21,7 @@ function returnMenuStatus() {
   if (sessionStorage.getItem("selected-sex") != null) {
     sessionStorage.removeItem("selected-sex");
   }
+  
   location.reload();
 }
 
@@ -93,7 +94,7 @@ async function retrievePrediction() {
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
   
-  const prediction = await response.json()
+  const prediction = await response.json();
 
   return prediction;
 }
