@@ -79,7 +79,7 @@
 			<option>Female</option>
 		</select>
 		<script>
-			const selectionMenu = document.getElementById("selmod");
+			const selectionMenu = document.getElementById("selmod").value;
 			sessionStorage.setItem("selected_model", selectionMenu);
 			
 			const selectedChoice = sessionStorage.getItem("selected_model");
