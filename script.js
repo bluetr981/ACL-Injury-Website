@@ -82,10 +82,10 @@ async function predictionRetrieval() {
         method: "POST",
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_" + sessionStorage.getItem("selected-model"),
-                              "CoronalTibialSlope":Number(sessionStorage.getItem("CTS-degrees")),
-                              "MedialTibialSlope":Number(sessionStorage.getItem("MTS-degrees")),
-                              "LateralTibialSlope"Number(sessionStorage.getItem("LTS-degrees")), 
-                              "MedialTibialDepth":Number(sessionStorage.getItem("MTD-degrees")),
+                              "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees")),
+                              "MedialTibialSlope":sessionStorage.getItem("MTS-degrees")),
+                              "LateralTibialSlope"sessionStorage.getItem("LTS-degrees")), 
+                              "MedialTibialDepth":sessionStorage.getItem("MTD-degrees")),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
     })
     .then(response => response.json())
