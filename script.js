@@ -27,7 +27,7 @@ function returnMenuStatus() {
 
 function updateCoronalTibialSlope() {
   if (sessionStorage.getItem("CTS-degrees") == null) {
-      sessionStorage.setItem("CTS-degrees", document.getElementById("CTS").value);
+    sessionStorage.setItem("CTS-degrees", document.getElementById("CTS").value);
   }
   else {
     sessionStorage.removeItem("CTS-degrees");
@@ -37,7 +37,7 @@ function updateCoronalTibialSlope() {
 
 function updateMedialTibialSlope() {
   if (sessionStorage.getItem("MTS-degrees") == null) {
-      sessionStorage.setItem("MTS-degrees", document.getElementById("MTS").value);
+    sessionStorage.setItem("MTS-degrees", document.getElementById("MTS").value);
   }
   else {
     sessionStorage.removeItem("MTS-degrees");
@@ -47,7 +47,7 @@ function updateMedialTibialSlope() {
 
 function updateLateralTibialSlope() {
   if (sessionStorage.getItem("LTS-degrees") == null) {
-      sessionStorage.setItem("LTS-degrees", document.getElementById("LTS").value);
+    sessionStorage.setItem("LTS-degrees", document.getElementById("LTS").value);
   }
   else {
     sessionStorage.removeItem("LTS-degrees");
@@ -57,7 +57,7 @@ function updateLateralTibialSlope() {
 
 function updateMedialTibialDepth() {
   if (sessionStorage.getItem("MTD-degrees") == null) {
-      sessionStorage.setItem("MTD-degrees", document.getElementById("MTD").value);
+    sessionStorage.setItem("MTD-degrees", document.getElementById("MTD").value);
   }
   else {
     sessionStorage.removeItem("MTD-degrees");
@@ -67,7 +67,7 @@ function updateMedialTibialDepth() {
 
 function updateSelectedSex() {
   if (sessionStorage.getItem("selected-sex") == null) {
-      sessionStorage.setItem("selected-sex", document.getElementById("selsex").value);
+    sessionStorage.setItem("selected-sex", document.getElementById("selsex").value);
   }
   else {
     sessionStorage.removeItem("selected-sex");
