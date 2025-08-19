@@ -74,6 +74,11 @@ function updateSelectedSex() {
   }
 }
 
+function renderResult() {
+  result = retrievePrediction().then(prediction => sessionStorage.setItem("RESULT", Number(prediction.Prediction));
+  return result;
+}
+
 async function retrievePrediction() {
   var response;
   
@@ -88,7 +93,7 @@ async function retrievePrediction() {
                               "selected-sex":sessionStorage.getItem("selected-sex")})
       });
   
-  const prediction = await response.text()
+  const prediction = await response.json()
 
-  sessionStorage.setItem("RESULT", Number(prediction));
+  return prediction;
 }
