@@ -79,12 +79,12 @@
 			<option>Female</option>
 		</select>
 		<script>
-			const selectionMenu = document.getElementById("selmod");
-			const selectionMenuStatus = document.getElementById("selmod").value;
+			var selectionMenu = document.getElementById("selmod");
+			var selectionMenuStatus = document.getElementById("selmod").value;
 
 			sessionStorage.setItem("selected_model", selectionMenuStatus);
 			
-			const selectedChoice = selectionMenuStatus;
+			var selectedChoice = selectionMenuStatus;
 
 			for (const x of selectionMenu.options) {
 				if (x.value == selectedChoice) {
