@@ -76,7 +76,7 @@ function updateSelectedSex() {
 }
 
 function renderResult() {
-  result = retrievePrediction().then(prediction => sessionStorage.setItem("RESULT", Number(prediction.Prediction));
+  result = retrievePrediction().then(prediction => sessionStorage.setItem("RESULT", Number(prediction.Prediction)));
   return result;
 }
 
