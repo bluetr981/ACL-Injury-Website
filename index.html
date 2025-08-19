@@ -82,10 +82,10 @@
 			const selectionMenu = document.getElementById("selmod");
 
 			if (sessionStorage.getItem("selected_model") == null) {
-				selectionMenu.value = "";
+				document.getElementById("selmod").value = "";
 			}
 			else {
-				const selectedChoice = session.getItem("selected_model");
+				const selectedChoice = sessionStorage.getItem("selected_model");
 
 				for (const x of selectionMenu.options) {
 					if (x.value == selectedChoice) {
