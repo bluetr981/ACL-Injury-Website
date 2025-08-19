@@ -79,16 +79,19 @@
 			<option>Female</option>
 		</select>
 		<script>
-			const selectionMenu = document.getElementById("selmod");			
+			const selectionMenu = document.getElementById("selmod");
+			const selectionMenuStatus = document.getElementById("selmod").value;
+
+			sessionStorage.setItem("selected_model", selectionMenuStatus);
 			
-			const selectedChoice = sessionStorage.getItem("selected_model");
+			/*const selectedChoice = sessionStorage.getItem("selected_model");
 
 			for (const x of selectionMenu.options) {
 				if (x.value == selectedChoice) {
 					x.selected = true;
 					break;
 				}
-			}
+			}*/
 
 			if (selectedChoice == "SVM_Acc_model_[1, 2, 4, 5]_1.joblib") {
 				document.getElementById("CTS").value = "";
