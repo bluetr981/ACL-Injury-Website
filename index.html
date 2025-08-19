@@ -79,65 +79,65 @@
 			<option>Female</option>
 		</select>
 		<script>
-			var selectionMenu = document.getElementById("selmod");
-			var selectionMenuStatus = document.getElementById("selmod").value;
+			const selectionMenu = document.getElementById("selmod");
 
-			sessionStorage.setItem("selected_model", selectionMenuStatus);
-			
-			var selectedChoice = selectionMenuStatus;
+			if (sessionStorage.getItem("selected_model") == null) {
+				selectionMenu.value = "";
+			else {
+				const selectedChoice = session.getItem("selected_model");
 
-			for (const x of selectionMenu.options) {
-				if (x.value == selectedChoice) {
-					x.selected = true;
-					break;
+				for (const x of selectionMenu.options) {
+					if (x.value == selectedChoice) {
+						x.selected = true;
+						break;
+					}
 				}
-			}
 
-			if (selectedChoice == "SVM_Acc_model_[1, 2, 4, 5]_1.joblib") {
-				document.getElementById("CTS").value = "";
-				document.getElementById("CTS").required = true;
-				document.getElementById("selsex").value = "";
-				document.getElementById("selsex").required = true;
+				if (selectedChoice == "SVM_Acc_model_[1, 2, 4, 5]_1.joblib") {
+					document.getElementById("CTS").value = "";
+					document.getElementById("CTS").required = true;
+					document.getElementById("selsex").value = "";
+					document.getElementById("selsex").required = true;
 
-				if (document.getElementById("LTS").required == true) {
-					document.getElementById("LTS").required = false;
-				}
+					if (document.getElementById("LTS").required == true) {
+						document.getElementById("LTS").required = false;
+					}
 				
-				document.getElementById("lts-label").style.display = "none";
-				document.getElementById("LTS").style.display = "none";
-			}
-			else if (selectedChoice == "SVM_F2_model_[2, 3, 4]_1.joblib") {
-				document.getElementById("LTS").value = "";
-				document.getElementById("LTS").required = true;
-
-				if (document.getElementById("CTS").required == true) {
-					document.getElementById("CTS").required = false;
+					document.getElementById("lts-label").style.display = "none";
+					document.getElementById("LTS").style.display = "none";
 				}
+				else if (selectedChoice == "SVM_F2_model_[2, 3, 4]_1.joblib") {
+					document.getElementById("LTS").value = "";
+					document.getElementById("LTS").required = true;
 
-				if (document.getElementById("selsex").required == true) {
+					if (document.getElementById("CTS").required == true) {
+						document.getElementById("CTS").required = false;
+					}	
+
+					if (document.getElementById("selsex").required == true) {
+						document.getElementById("selsex").required = false;
+					}
+
+					document.getElementById("cts-label").style.display = "none";
+					document.getElementById("CTS").style.display = "none";
+					document.getElementById("select-sex").style.display = "none";
+					document.getElementById("selsex").style.display = "none";
+				}
+				else {
+					document.getElementById("CTS").value = "";
+					document.getElementById("LTS").value = "";
+					document.getElementById("selsex").value = "";
+				
+					document.getElementById("CTS").required = false;
+					document.getElementById("LTS").required = false;
 					document.getElementById("selsex").required = false;
 				}
-
-				document.getElementById("cts-label").style.display = "none";
-				document.getElementById("CTS").style.display = "none";
-				document.getElementById("select-sex").style.display = "none";
-				document.getElementById("selsex").style.display = "none";
-			}
-			else {
-				document.getElementById("CTS").value = "";
-				document.getElementById("LTS").value = "";
-				document.getElementById("selsex").value = "";
-				
-				document.getElementById("CTS").required = false;
-				document.getElementById("LTS").required = false;
-				document.getElementById("selsex").required = false;
-			}
 			
-			document.getElementById("CTS").value = sessionStorage.getItem("CTS-degrees");
-			document.getElementById("MTS").value = sessionStorage.getItem("MTS-degrees");
-			document.getElementById("LTS").value = sessionStorage.getItem("LTS-degrees");
-			document.getElementById("MTD").value = sessionStorage.getItem("MTD-degrees");
-			document.getElementById("selsex").value = sessionStorage.getItem("selected-sex");
+				document.getElementById("CTS").value = sessionStorage.getItem("CTS-degrees");
+				document.getElementById("MTS").value = sessionStorage.getItem("MTS-degrees");
+				document.getElementById("LTS").value = sessionStorage.getItem("LTS-degrees");
+				document.getElementById("MTD").value = sessionStorage.getItem("MTD-degrees");
+				document.getElementById("selsex").value = sessionStorage.getItem("selected-sex");
 		</script>				
 	</div>
 	<center>
