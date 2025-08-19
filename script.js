@@ -75,11 +75,6 @@ function updateSelectedSex() {
   }
 }
 
-function renderResult() {
-  result = retrievePrediction().then(prediction => sessionStorage.setItem("RESULT", Number(prediction.Prediction)));
-  return result;
-}
-
 async function retrievePrediction() {
   var response;
   
@@ -92,9 +87,7 @@ async function retrievePrediction() {
                               "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
-      });
-  
-  const prediction = await response.json();
-
-  return prediction;
+    })
+    .then(response => response.json())
+    .then(prediction => sessionStorage.setItem("RESULT", response));
 }
