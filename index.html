@@ -84,14 +84,14 @@
 
 			sessionStorage.setItem("selected_model", selectionMenuStatus);
 			
-			/*const selectedChoice = sessionStorage.getItem("selected_model");
+			const selectedChoice = selectionMenuStatus;
 
 			for (const x of selectionMenu.options) {
 				if (x.value == selectedChoice) {
 					x.selected = true;
 					break;
 				}
-			}*/
+			}
 
 			if (selectedChoice == "SVM_Acc_model_[1, 2, 4, 5]_1.joblib") {
 				document.getElementById("CTS").value = "";
