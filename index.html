@@ -80,6 +80,8 @@
 		</select>
 		<script>
 			const selectionMenu = document.getElementById("selmod");
+			sessionStorage.setItem("selected_model", selectionMenu);
+			
 			const selectedChoice = sessionStorage.getItem("selected_model");
 
 			for (const x of selectionMenu.options) {
