@@ -83,6 +83,17 @@
 
 			if (sessionStorage.getItem("selected_model") == null) {
 				document.getElementById("selmod").value = "";
+
+				document.getElementById("cts-label").style.display = "none";
+				document.getElementById("CTS").style.display = "none
+				document.getElementById("mts-label").style.display = "none";
+				document.getElementById("MTS").style.display = "none";
+				document.getElementById("lts-label").style.display = "none";
+				document.getElementById("LTS").style.display = "none";
+				document.getElementById("mtd-label").style.display = "none";
+				document.getElementById("MTD").style.display = "none";
+				document.getElementById("select-sex").style.display = "none";
+				document.getElementById("selsex").style.display = "none";
 			}
 			else {
 				const selectedChoice = sessionStorage.getItem("selected_model");
