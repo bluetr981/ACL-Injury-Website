@@ -84,7 +84,7 @@ async function predictionRetrieval() {
         body: JSON.stringify({"selected-model":"models/trained_" + sessionStorage.getItem("selected-model"),
                               "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
                               "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
-                              "LateralTibialSlope"sessionStorage.getItem("LTS-degrees"), 
+                              "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
                               "selected-sex":sessionStorage.getItem("selected-sex")})
     })
