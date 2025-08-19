@@ -84,7 +84,7 @@
 			
 			sessionStorage.setItem("selected_model", selectionMenuOptionSelection);
 			
-			const selectedChoice = sessionStorage.getItem("selected_model");
+			var selectedChoice = sessionStorage.getItem("selected_model");
 
 			for (const x of selectionMenu.options) {
 				if (x.value == selectedChoice) {
