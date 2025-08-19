@@ -1,4 +1,7 @@
-/*function returnMenuStatus() {  
+function returnMenuStatus() {
+  let currentSelection = document.getElementById("selmod").value;
+  sessionStorage.setItem("selected_model", currentSelection);
+  
   if (sessionStorage.getItem("CTS-degrees") != null) {
     sessionStorage.removeItem("CTS-degrees");
   }
@@ -72,7 +75,7 @@ function updateSelectedSex() {
   }
 }
 
-function renderResult() {
+/*function renderResult() {
   result = retrievePrediction().then(prediction => sessionStorage.setItem("RESULT", Number(prediction.Prediction)));
   return result;
 }
@@ -95,59 +98,3 @@ async function retrievePrediction() {
 
   return prediction;
 }*/
-
-function returnMenuStatus() {
-  let selectionMenuStatus = document.getElementById("selmod").value;
-  sessionStorage.setItem("selected_model", selectionMenuStatus);
-  location.reload();
-}
-
-function updateCoronalTibialSlope() {
-  if (sessionStorage.getItem("CTS-degrees") == null) {
-      sessionStorage.setItem("CTS-degrees", document.getElementById("CTS").value);
-  }
-  else {
-    sessionStorage.removeItem("CTS-degrees");
-    sessionStorage.setItem("CTS-degrees", document.getElementById("CTS").value);
-  }
-}
-
-function updateMedialTibialSlope() {
-  if (sessionStorage.getItem("MTS-degrees") == null) {
-      sessionStorage.setItem("MTS-degrees", document.getElementById("MTS").value);
-  }
-  else {
-    sessionStorage.removeItem("MTS-degrees");
-    sessionStorage.setItem("MTS-degrees", document.getElementById("MTS").value);
-  }
-}
-
-function updateLateralTibialSlope() {
-  if (sessionStorage.getItem("LTS-degrees") == null) {
-      sessionStorage.setItem("LTS-degrees", document.getElementById("LTS").value);
-  }
-  else {
-    sessionStorage.removeItem("LTS-degrees");
-    sessionStorage.setItem("LTS-degrees", document.getElementById("LTS").value);
-  }
-}
-
-function updateMedialTibialDepth() {
-  if (sessionStorage.getItem("MTD-degrees") == null) {
-      sessionStorage.setItem("MTD-degrees", document.getElementById("MTD").value);
-  }
-  else {
-    sessionStorage.removeItem("MTD-degrees");
-    sessionStorage.setItem("MTD-degrees", document.getElementById("MTD").value);
-  }
-}
-
-function updateSelectedSex() {
-  if (sessionStorage.getItem("selected-sex") == null) {
-      sessionStorage.setItem("selected-sex", document.getElementById("selsex").value);
-  }
-  else {
-    sessionStorage.removeItem("selected-sex");
-    sessionStorage.setItem("selected-sex", document.getElementById("selsex").value);
-  }
-}
