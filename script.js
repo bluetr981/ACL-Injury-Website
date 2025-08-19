@@ -1,4 +1,7 @@
 function returnMenuStatus() {
+  selectionMenuStatus = document.getElementById("selmod").value;
+  sessionStorage.setItem("selected_model", selectionMenuStatus);
+  
   if (sessionStorage.getItem("CTS-degrees") != null) {
     sessionStorage.removeItem("CTS-degrees");
   }
