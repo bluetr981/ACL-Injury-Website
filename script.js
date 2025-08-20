@@ -79,8 +79,12 @@ async function TestAPI() {
     var response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
         headers: {'Content-Type':'application/json'},
-        body: JSON.stringify(sessionStorage);
-    
+        body: JSON.stringify({"selected-model":"models/trained_" + sessionStorage.getItem("selected_model"),
+                              "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
+                              "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
+                              "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"),
+                              "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
+                              "selected-sex":sessionStorage.getItem("selected-sex)})
     .then(response => response.json())
     .then(data => sessionStorage.setItem("RESULT", data.Prediction));
 }
