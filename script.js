@@ -80,11 +80,11 @@ async function TestAPI() {
         method: "POST",
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({"selected-model":"models/trained_" + sessionStorage.getItem("selected_model"),
-                              "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
-                              "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
-                              "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"),
-                              "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
-                              "selected-sex":sessionStorage.getItem("selected-sex")})
+                              "CoronalTibialSlope":String(sessionStorage.getItem("CTS-degrees")).replace(null, "0"),
+                              "MedialTibialSlope":String(sessionStorage.getItem("MTS-degrees")).replace(null, "0"),
+                              "LateralTibialSlope":String(sessionStorage.getItem("LTS-degrees")).replace(null, "0"),
+                              "MedialTibialDepth":String(sessionStorage.getItem("MTD-degrees")).replace(null, "0"),
+                              "selected-sex":String(sessionStorage.getItem("selected-sex")).replace(null, "Female")})
       })
     .then(response => response.json())
     .then(data => sessionStorage.setItem("RESULT", data.Prediction));
