@@ -88,7 +88,7 @@ async function TestAPI(event) {
                               "selected-sex": "Female",
                               "MedialTibialSlope": "7"})
 	})
-
-	.then(response => await response.json());
+		
+  .then(response => await response.json())
   .then(data => document.getElementById("demo").innerHTML = data.Prediction);
 }
