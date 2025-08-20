@@ -75,19 +75,12 @@ function updateSelectedSex() {
   }
 }
 
-async function predictionRetrieval() {
-  var response;
-  
-  response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
+async function TestAPI() {
+    var response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
         headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({"selected-model":"models/trained_" + sessionStorage.getItem("selected-model"),
-                              "CoronalTibialSlope":sessionStorage.getItem("CTS-degrees"),
-                              "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
-                              "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"), 
-                              "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
-                              "selected-sex":sessionStorage.getItem("selected-sex")})
-    })
+        body: JSON.stringify(sessionStorage);
+    
     .then(response => response.json())
-    .then(prediction => sessionStorage.setItem("RESULT", response));
+    .then(data => sessionStorage.setItem("RESULT", data.Prediction));
 }
