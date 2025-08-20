@@ -21,8 +21,10 @@
                               "selected-sex": "Female",
                               "MedialTibialSlope": "7"})
 			})
-			.then(response => await response.json());
-			document.getElementById("demo").innerHTML = response.Prediction;
+
+			const prediction = await response.json();
+			
+			document.getElementById("demo").innerHTML = prediction.Prediction;
 		}
 	</script>
 	<style>
