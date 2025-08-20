@@ -87,5 +87,5 @@ async function TestAPI() {
                               "selected-sex":String(sessionStorage.getItem("selected-sex")).replace(null, "Female")})
       })
     .then(response => response.json())
-    .then(data => sessionStorage.setItem("RESULT", data.Prediction));
+    .then(data => console.log(data.Prediction));
 }
