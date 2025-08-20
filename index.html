@@ -51,11 +51,11 @@
 	<div class="container p-5 selection-container bg-light text-dark text-center">
 		<label for="selmod" class="form-label">Select Model:</label>
 		<select class="form-select" id="selmod" name="select_model" onchange="returnMenuStatus()">
-			<option id="model1" value="RF_Acc_model_[1, 2, 3, 4, 5]_1.joblib">RF_Acc_model_[1, 2, 3, 4, 5]_1.joblib</option>
-			<option id="model2" value="SVM_Acc_model_[1, 2, 3, 4, 5]_1.joblib">SVM_Acc_model_[1, 2, 3, 4, 5]_1.joblib</option>
-			<option id="model3" value="SVM_Acc_model_[1, 2, 4, 5]_1.joblib">SVM_Acc_model_[1, 2, 4, 5]_1.joblib</option>
-			<option id="model4" value="SVM_F2_model_[2, 3, 4]_1.joblib">SVM_F2_model_[2, 3, 4]_1.joblib</option>
-			<option id="model5" value="XGB_F2_model_[1, 2, 3, 4, 5]_1.json">XGB_F2_model_[1, 2, 3, 4, 5]_1.json</option>
+			<option id="model1" value="models/trained_RF_Acc_model_[1, 2, 3, 4, 5]_1.joblib">models/trained_RF_Acc_model_[1, 2, 3, 4, 5]_1.joblib</option>
+			<option id="model2" value="models/trained_SVM_Acc_model_[1, 2, 3, 4, 5]_1.joblib">models/trained_SVM_Acc_model_[1, 2, 3, 4, 5]_1.joblib</option>
+			<option id="model3" value="models/trained_SVM_Acc_model_[1, 2, 4, 5]_1.joblib">models/trained_SVM_Acc_model_[1, 2, 4, 5]_1.joblib</option>
+			<option id="model4" value="models/trained_SVM_F2_model_[2, 3, 4]_1.joblib">models/trained_SVM_F2_model_[2, 3, 4]_1.joblib</option>
+			<option id="model5" value="models/trained_XGB_F2_model_[1, 2, 3, 4, 5]_1.json">models/trained_XGB_F2_model_[1, 2, 3, 4, 5]_1.json</option>
 		</select>
 		<label for="CTS" class="form-label form-label-spacer" id="cts-label">Enter <mark>CTS</mark> (Coronal Tibial Slope) in degrees:</label>
 		<input type="text" class="form-control" id="CTS" name="CoronalTibialSlope" value="null" placeholder="Enter CTS" onchange="updateCoronalTibialSlope()">
@@ -97,7 +97,7 @@
 					}
 				}
 
-				if (selectedChoice == "SVM_Acc_model_[1, 2, 4, 5]_1.joblib") {
+				if (selectedChoice == "models/trained_SVM_Acc_model_[1, 2, 4, 5]_1.joblib") {
 					document.getElementById("CTS").value = "";
 					document.getElementById("CTS").required = true;
 					document.getElementById("selsex").value = "";
@@ -110,7 +110,7 @@
 					document.getElementById("lts-label").style.display = "none";
 					document.getElementById("LTS").style.display = "none";
 				}
-				else if (selectedChoice == "SVM_F2_model_[2, 3, 4]_1.joblib") {
+				else if (selectedChoice == "models/trained_SVM_F2_model_[2, 3, 4]_1.joblib") {
 					document.getElementById("LTS").value = "";
 					document.getElementById("LTS").required = true;
 
