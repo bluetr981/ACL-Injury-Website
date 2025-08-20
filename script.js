@@ -84,7 +84,7 @@ async function TestAPI() {
                               "MedialTibialSlope":sessionStorage.getItem("MTS-degrees"),
                               "LateralTibialSlope":sessionStorage.getItem("LTS-degrees"),
                               "MedialTibialDepth":sessionStorage.getItem("MTD-degrees"),
-                              "selected-sex":sessionStorage.getItem("selected-sex)})
+                              "selected-sex":sessionStorage.getItem("selected-sex")})
       })
     .then(response => response.json())
     .then(data => sessionStorage.setItem("RESULT", data.Prediction));
