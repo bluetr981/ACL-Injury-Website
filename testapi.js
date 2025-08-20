@@ -12,4 +12,5 @@ async function TestAPI(selected_model, CTS, MTS, LTS, MTD, selected_sex) {
     })
     .then(response => response.json())
     .then(data => console.log(data));
+    location.reload();
 }
