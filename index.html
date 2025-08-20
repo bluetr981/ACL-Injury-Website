@@ -8,8 +8,10 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="script.js"></script>
 	<script>
-		async function TestAPI() {
-			var response = fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
+		async function TestAPI(event) {
+			event.preventDefault();
+			
+			var response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
 				method: "POST",
 				headers: {'Content-Type':'application/json'},
 				body: JSON.stringify({"selected-model": "models/trained_RF_Acc_model_[1, 2, 3, 4, 5]_1.joblib",
@@ -62,7 +64,7 @@
 	</center>
 </div>
 
-<form action="https://bluetr981.github.io/ACL-Injury-Website/" onsubmit="TestAPI()" method="get">
+<form action="https://bluetr981.github.io/ACL-Injury-Website/" onsubmit="TestAPI(event)" method="get">
 	<h1 class="features-display text-center">Features</h1>
 	<div class="container p-5 selection-container bg-light text-dark text-center">
 		<label for="selmod" class="form-label">Select Model:</label>
