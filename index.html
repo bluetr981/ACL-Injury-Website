@@ -14,7 +14,6 @@
 		}
 		.website-footer {
 			text-align: center;
-			margin-top: 64px;
 		}
 		.features-display {
 			margin-top: 144px;
@@ -160,7 +159,7 @@
 
 <br>
 
-<hr style="margin-top: 64px;">
+<hr style="margin-top: 64px;" id="hr-bar1">
 	
 <div class="container" id="unlikely-alert">
 	<div class="alert alert-success">
@@ -176,7 +175,7 @@
 	</div>
 </div>
 
-<hr>
+<hr style="margin-bottom: 64px;" id="hr-bar2">
 
 <script>
 	const UNLIKELY_RESULT = '0';
@@ -191,12 +190,15 @@
 		}
 	}
 	else {
+		document.getElementById("hr-bar1").style.display = "none";
+		document.getElementById("hr-bar2").style.display = "none";
+		
 		document.getElementById("likely-alert").style.display = "none";
 		document.getElementById("unlikely-alert").style.display = "none";
 	}
 </script>
 	
-<div class="container-fluid p-3 bg-light website-footer">
+<div class="container-fluid p-5 bg-light website-footer">
 	<footer>© Dr. Naveen Chandrashekhar, Cheng Hao Kao, and Puneet Bhat 2025</footer>
 </div>
 
