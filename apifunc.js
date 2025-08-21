@@ -3,12 +3,12 @@ async function TestAPI() {
         method: "POST",
         headers: {'Content-Type':'application/json'},
 
-        body: JSON.stringify({"selected-model": "models/trained_RF_Acc_model_[1, 2, 3, 4, 5]_1.joblib",
-                              "CoronalTibialSlope": 1,
-                              "MedialTibialSlope": 2, 
-                              "LateralTibialSlope": 3,
-                              "MedialTibialDepth": 4,
-                              "selected-sex": "Male"})
+        body: JSON.stringify({"selected-model": sessionStorage.getItem("selected_model"),
+                              "CoronalTibialSlope": String(sessionStorage.getItem("CTS-degrees")).replace(null, "-1"),
+                              "MedialTibialSlope": String(sessionStorage.getItem("MTS-degrees")).replace(null, "-1"), 
+                              "LateralTibialSlope": String(sessionStorage.getItem("LTS-degrees")).replace(null, "-1"),
+                              "MedialTibialDepth": String(sessionStorage.getItem("MTD-degrees")).replace(null, "-1"),
+                              "selected-sex": String(sessionStorage.getItem("selected-sex")).replace(null, "-1")})
     })
     .then(response => response.json())
     .then(data => sessionStorage.setItem("RESULT", data.Prediction));
