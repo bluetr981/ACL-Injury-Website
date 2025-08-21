@@ -83,6 +83,8 @@
 			if (sessionStorage.getItem("selected_model") == null) {
 				document.getElementById("selmod").value = "";
 
+				document.getElementById("submit_button").style.display = "none";
+				
 				document.getElementById("cts-label").style.display = "none";
 				document.getElementById("CTS").style.display = "none";
 				document.getElementById("mts-label").style.display = "none";
@@ -95,6 +97,8 @@
 				document.getElementById("selsex").style.display = "none";
 			}
 			else {
+				document.getElementById("submit_button").style.display = "none";
+				
 				const selectedChoice = sessionStorage.getItem("selected_model");
 
 				for (const x of selectionMenu.options) {
