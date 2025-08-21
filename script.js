@@ -30,6 +30,10 @@ function returnMenuStatus() {
 }
 
 function updateCoronalTibialSlope() {
+  if (sessionStorage.getItem("RESULT") != null) {
+    sessionStorage.removeItem("RESULT");
+  }
+  
   if (sessionStorage.getItem("CTS-degrees") == null) {
     sessionStorage.setItem("CTS-degrees", document.getElementById("CTS").value);
   }
@@ -40,6 +44,10 @@ function updateCoronalTibialSlope() {
 }
 
 function updateMedialTibialSlope() {
+  if (sessionStorage.getItem("RESULT") != null) {
+    sessionStorage.removeItem("RESULT");
+  }
+  
   if (sessionStorage.getItem("MTS-degrees") == null) {
     sessionStorage.setItem("MTS-degrees", document.getElementById("MTS").value);
   }
@@ -50,6 +58,10 @@ function updateMedialTibialSlope() {
 }
 
 function updateLateralTibialSlope() {
+  if (sessionStorage.getItem("RESULT") != null) {
+    sessionStorage.removeItem("RESULT");
+  }
+  
   if (sessionStorage.getItem("LTS-degrees") == null) {
     sessionStorage.setItem("LTS-degrees", document.getElementById("LTS").value);
   }
@@ -60,6 +72,10 @@ function updateLateralTibialSlope() {
 }
 
 function updateMedialTibialDepth() {
+  if (sessionStorage.getItem("RESULT") != null) {
+    sessionStorage.removeItem("RESULT");
+  }
+  
   if (sessionStorage.getItem("MTD-degrees") == null) {
     sessionStorage.setItem("MTD-degrees", document.getElementById("MTD").value);
   }
@@ -70,6 +86,10 @@ function updateMedialTibialDepth() {
 }
 
 function updateSelectedSex() {
+  if (sessionStorage.getItem("RESULT") != null) {
+    sessionStorage.removeItem("RESULT");
+  }
+  
   if (sessionStorage.getItem("selected-sex") == null) {
     sessionStorage.setItem("selected-sex", document.getElementById("selsex").value);
   }
