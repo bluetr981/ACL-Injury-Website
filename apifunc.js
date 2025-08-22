@@ -6,10 +6,10 @@ function adjustInputs(storageItem) {
 }
 
 async function TestAPI() {
-    adjustInputs("CoronalTibialSlope");
-    adjustInputs("MedialTibialSlope");
-    adjustInputs("LateralTibialSlope");
-    adjustInputs("MedialTibialDepth");
+    adjustInputs("CTS-degrees");
+    adjustInputs("MTS-degrees");
+    adjustInputs("LTS-degrees");
+    adjustInputs("MTD-degrees");
     adjustInputs("selected-sex");
     
     var response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
