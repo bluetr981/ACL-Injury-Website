@@ -32,7 +32,7 @@ function returnMenuStatus() {
 function updateCoronalTibialSlope() {
   if (sessionStorage.getItem("RESULT") != null) {
     sessionStorage.removeItem("RESULT");
-    location.reload();
+    location.replace("https://bluetr981.github.io/ACL-Injury-Website/");  
   }
   
   if (sessionStorage.getItem("CTS-degrees") == null) {
@@ -47,7 +47,7 @@ function updateCoronalTibialSlope() {
 function updateMedialTibialSlope() {
   if (sessionStorage.getItem("RESULT") != null) {
     sessionStorage.removeItem("RESULT");
-    location.reload();
+    location.replace("https://bluetr981.github.io/ACL-Injury-Website/");
   }
   
   if (sessionStorage.getItem("MTS-degrees") == null) {
@@ -62,7 +62,7 @@ function updateMedialTibialSlope() {
 function updateLateralTibialSlope() {
   if (sessionStorage.getItem("RESULT") != null) {
     sessionStorage.removeItem("RESULT");
-    location.reload();
+    location.replace("https://bluetr981.github.io/ACL-Injury-Website/");
   }
   
   if (sessionStorage.getItem("LTS-degrees") == null) {
@@ -77,7 +77,7 @@ function updateLateralTibialSlope() {
 function updateMedialTibialDepth() {
   if (sessionStorage.getItem("RESULT") != null) {
     sessionStorage.removeItem("RESULT");
-    location.reload();
+    location.replace("https://bluetr981.github.io/ACL-Injury-Website/");
   }
   
   if (sessionStorage.getItem("MTD-degrees") == null) {
@@ -92,7 +92,7 @@ function updateMedialTibialDepth() {
 function updateSelectedSex() {
   if (sessionStorage.getItem("RESULT") != null) {
     sessionStorage.removeItem("RESULT");
-    location.reload();
+    location.replace("https://bluetr981.github.io/ACL-Injury-Website/");
   }
   
   if (sessionStorage.getItem("selected-sex") == null) {
