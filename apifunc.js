@@ -1,7 +1,7 @@
 function adjustInputs(storageItem) {
     if (sessionStorage.getItem(storageItem) == null) {
         sessionStorage.removeItem(storageItem);
-        sessionStorage.setItem(storageItem, "0");
+        sessionStorage.setItem(storageItem, "-1");
     }
 }
 
