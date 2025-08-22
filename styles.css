@@ -1,0 +1,20 @@
+		body {
+			background-color: white;
+		}
+		.website-footer {
+			text-align: center;
+			margin-top: 320px;
+		}
+		.features-display {
+			margin-top: 112px;
+		}
+		.selection-container {
+			margin-top: 48px;
+		}
+		.form-label-spacer {
+			margin-top: 16px;
+		}
+		#unlikely-result, #likely-result {
+			margin-top: 32px;
+			margin-bottom: 32px;
+		}
