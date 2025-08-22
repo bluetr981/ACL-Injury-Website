@@ -33,6 +33,7 @@ async function TestAPI() {
 
     if (sessionStorage.getItem("RESULT") == LIKELY_RESULT) {
         location.replace("https://bluetr981.github.io/ACL-Injury-Website/#result-l");
+    }
     else {
         location.replace("https://bluetr981.github.io/ACL-Injury-Website/#result-u");
     }
