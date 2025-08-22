@@ -14,5 +14,5 @@ async function TestAPI() {
 
     location.reload();
     await delay(250);
-    location.href = "https://bluetr981.github.io/ACL-Injury-Website/#result";
+    location.replace("https://bluetr981.github.io/ACL-Injury-Website/#result");
 }
