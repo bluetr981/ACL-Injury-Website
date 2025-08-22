@@ -29,8 +29,6 @@ async function TestAPI() {
     .then(response => response.json())
     .then(data => sessionStorage.setItem("RESULT", data.Prediction));
 
-    location.reload();
-
     if (sessionStorage.getItem("RESULT") == LIKELY_RESULT) {
         location.replace("https://bluetr981.github.io/ACL-Injury-Website/#result-l");
     }
