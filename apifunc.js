@@ -6,6 +6,9 @@ function adjustInputs(storageItem) {
 }
 
 async function TestAPI() {
+    const UNLIKELY_RESULT = '0';
+    const LIKELY_RESULT = '1';
+    
     adjustInputs("CTS-degrees");
     adjustInputs("MTS-degrees");
     adjustInputs("LTS-degrees");
@@ -27,4 +30,10 @@ async function TestAPI() {
     .then(data => sessionStorage.setItem("RESULT", data.Prediction));
 
     location.reload();
+
+    if (sessionStorage.getItem("RESULT") == LIKELY_RESULT) {
+        location.replace("https://bluetr981.github.io/ACL-Injury-Website/#result-l");
+    else {
+        location.replace("https://bluetr981.github.io/ACL-Injury-Website/#result-u");
+    }
 }
