@@ -61,7 +61,12 @@
 		<button type="submit" class="btn btn-danger mt-5 text-white" id="submit_button">Predict Outcome</button>
 	</center>
 	<script>
-		document.getElementById("submit_form_data").addEventListener("submit", function(event) { event.preventDefault(); });
+		document.getElementById("submit_form_data").addEventListener("submit", 
+		function(event) { 
+			event.preventDefault();
+			location.reload();
+			location.replace("https://bluetr981.github.io/ACL-Injury-Website/#result");
+		});
 			
 		const selectionMenu = document.getElementById("selmod");
 
