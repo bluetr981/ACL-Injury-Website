@@ -35,4 +35,6 @@ async function TestAPI() {
     else {
         location.replace("https://bluetr981.github.io/ACL-Injury-Website/#result-u");
     }
+
+    location.reload();
 }
