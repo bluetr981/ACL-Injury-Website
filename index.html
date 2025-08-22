@@ -148,14 +148,14 @@
 
 <br>
 	
-<div class="container" id="result">
+<div class="container" id="result-l">
 	<div class="alert alert-danger">
 		<h2 class="text-center">Verdict: Likely</h2>
 		<p><center>Given the following values for the features required, it is likely that the patient will obtain an ACL injury when participating in sports or any other related activities.</center></p>
 	</div>
 </div>
 	
-<div class="container" id="result-opp">
+<div class="container" id="result-u">
 	<div class="alert alert-success">
 		<h2 class="text-center">Verdict: Unlikely</h2>
 		<p><center>Given the following features, it is unlikely that the patient will obtain an ACL injury when participating in sports or any other related activities.</center></p>
@@ -168,15 +168,15 @@
 	
 	if (sessionStorage.getItem("RESULT") != null) {
 		if (sessionStorage.getItem("RESULT") == UNLIKELY_RESULT) {
-			document.getElementById("result").style.display = "none";
+			document.getElementById("result-l").style.display = "none";
 		}
 		else {
-			document.getElementById("result-opp").style.display = "none";
+			document.getElementById("result-u").style.display = "none";
 		}
 	}
 	else {		
-		document.getElementById("result").style.display = "none";
-		document.getElementById("result-opp").style.display = "none";
+		document.getElementById("result-l").style.display = "none";
+		document.getElementById("result-u").style.display = "none";
 	}
 </script>
 	
