@@ -5,6 +5,15 @@ function adjustInputs(storageItem) {
     }
 }
 
+function redirectToResult() {
+    if (sessionStorage.getItem("RESULT") == LIKELY_RESULT) {
+        location.replace("https://bluetr981.github.io/ACL-Injury-Website/#result-l");
+    }
+    else {
+        location.replace("https://bluetr981.github.io/ACL-Injury-Website/#result-u");
+    }
+}
+
 async function TestAPI() {
     const UNLIKELY_RESULT = '0';
     const LIKELY_RESULT = '1';
@@ -29,12 +38,7 @@ async function TestAPI() {
     .then(response => response.json())
     .then(data => sessionStorage.setItem("RESULT", data.Prediction));
 
-    if (sessionStorage.getItem("RESULT") == LIKELY_RESULT) {
-        location.replace("https://bluetr981.github.io/ACL-Injury-Website/#result-l");
-    }
-    else {
-        location.replace("https://bluetr981.github.io/ACL-Injury-Website/#result-u");
-    }
-
     location.reload();
+
+    setTimeout(redirectToResult(), 500);
 }
