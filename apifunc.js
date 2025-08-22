@@ -12,7 +12,5 @@ async function TestAPI() {
     .then(response => response.json())
     .then(data => sessionStorage.setItem("RESULT", data.Prediction));
 
-    location.href = "https://bluetr981.github.io/ACL-Injury-Website/#result";
-    await delay(1000);
-    location.reload();
+    location.replace("https://bluetr981.github.io/ACL-Injury-Website/#result");
 }
