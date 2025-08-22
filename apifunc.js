@@ -1,4 +1,17 @@
+function adjustInputs(storageItem) {
+    if (sessionStorage.getItem(storageItem) == null) {
+        sessionStorage.removeItem(storageItem);
+        sessionStorage.setItem(storageItem, "0");
+    }
+}
+
 async function TestAPI() {
+    adjustInputs("CoronalTibialSlope");
+    adjustInputs("MedialTibialSlope");
+    adjustInputs("LateralTibialSlope");
+    adjustInputs("MedialTibialDepth");
+    adjustInputs("selected-sex");
+    
     var response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
         headers: {'Content-Type':'application/json'},
@@ -9,6 +22,7 @@ async function TestAPI() {
                               "MedialTibialDepth": String(sessionStorage.getItem("MTD-degrees")).replace(null, "-1"),
                               "selected-sex": String(sessionStorage.getItem("selected-sex")).replace(null, "-1")})
     })
+        
     .then(response => response.json())
     .then(data => sessionStorage.setItem("RESULT", data.Prediction));
 
