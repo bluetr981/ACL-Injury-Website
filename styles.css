@@ -3,7 +3,6 @@
 		}
 		.website-footer {
 			text-align: center;
-			margin-top: 192px;
 		}
 		.features-display {
 			margin-top: 180px;
@@ -14,7 +13,7 @@
 		.form-label-spacer {
 			margin-top: 16px;
 		}
-		#unlikely-result, #likely-result {
-			margin-top: 32px;
-			margin-bottom: 32px;
+		#result, #result-opp {
+			margin-top: 48px;
+			margin-bottom: 48px;
 		}
