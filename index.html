@@ -47,10 +47,13 @@
 			<option>Female</option>
 		</select>
 	</div>
-	<center>
-		<button type="submit" class="btn btn-danger mt-5 text-white" id="submit_button">Predict Outcome</button>
-		<input type="button" class="btn btn-primary mt-5 text-white" id="clear_button" value="Clear Inputs" onclick="clearAllFields()"/>
-	</center>
+	
+	<div class="container" id="button_container">
+		<center>
+			<button type="submit" class="btn btn-danger text-white" id="submit_button">Predict Outcome</button>
+			<input type="button" class="btn btn-primary text-white" id="clear_button" value="Clear Inputs" onclick="clearAllFields()"/>
+		</center>
+	</div>
 	<script>
 		document.getElementById("submit_form_data").addEventListener("submit", 
 		function(event) { 
