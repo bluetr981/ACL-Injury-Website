@@ -14,8 +14,8 @@
 		.form-label-spacer {
 			margin-top: 16px;
 		}
-		#buttons_container {
-			margin-top: 48px;
+		#submit_button, #clear_button {
+			display: inline block;
 		}
 		#result-l, #result-u {
 			margin-top: 48px;
