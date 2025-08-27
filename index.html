@@ -26,7 +26,7 @@
 	<h1 class="features-display text-center">Features</h1>
 	<div class="container p-5 selection-container bg-light text-dark text-center">
 		<label for="selmod" class="form-label">Select Model:</label>
-		<select class="form-select" id="selmod" name="select_model" onchange="returnMenuStatus()">
+		<select class="form-select" id="selmod" name="select_model" onchange="clearAllFields()">
 			<option id="model1" value="models/trained_RF_Acc_model_[1, 2, 3, 4, 5]_1.joblib">models/trained_RF_Acc_model_[1, 2, 3, 4, 5]_1.joblib</option>
 			<option id="model2" value="models/trained_SVM_Acc_model_[1, 2, 3, 4, 5]_1.joblib">models/trained_SVM_Acc_model_[1, 2, 3, 4, 5]_1.joblib</option>
 			<option id="model3" value="models/trained_SVM_Acc_model_[1, 2, 4, 5]_1.joblib">models/trained_SVM_Acc_model_[1, 2, 4, 5]_1.joblib</option>
