@@ -63,7 +63,8 @@
 			document.getElementById("selmod").value = "";
 
 			document.getElementById("submit_button").style.display = "none";
-
+			document.getElementById("clear_button").style.display = "none";
+			
 			document.getElementById("cts-label").style.display = "none";
 			document.getElementById("CTS").style.display = "none";
 			document.getElementById("mts-label").style.display = "none";
@@ -77,7 +78,8 @@
 		}
 		else {
 			document.getElementById("submit_button").style.display = "block";
-				
+			document.getElementById("clear_button").style.display = "block";
+			
 			const selectedChoice = sessionStorage.getItem("selected_model");
 
 			for (const x of selectionMenu.options) {
