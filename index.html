@@ -49,8 +49,10 @@
 	</div>
 	
 	<div class="container">
-		<button type="submit" class="btn btn-danger text-white" id="submit_button">Predict Outcome</button>
-		<button type="button" class="btn btn-primary text-white" id="clear_button">Clear Inputs</button>
+		<center>
+			<button type="submit" class="btn btn-danger text-white" id="submit_button">Predict Outcome</button>
+			<button type="button" class="btn btn-primary text-white" id="clear_button">Clear Session</button>
+		</center>
 	</div>
 	
 	<script>
@@ -79,8 +81,8 @@
 			document.getElementById("selsex").style.display = "none";
 		}
 		else {
-			document.getElementById("submit_button").style.display = "block";
-			document.getElementById("clear_button").style.display = "block";
+			document.getElementById("submit_button").style.display = "inline-block";
+			document.getElementById("clear_button").style.display = "inline-block";
 			
 			const selectedChoice = sessionStorage.getItem("selected_model");
 
