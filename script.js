@@ -1,4 +1,4 @@
-function returnMenuStatus() {
+function clearAllFields() {
   let currentSelection = document.getElementById("selmod").value;
   sessionStorage.setItem("selected_model", currentSelection);
 
