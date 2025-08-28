@@ -27,11 +27,11 @@
 	<div class="container p-5 selection-container bg-light text-dark text-center">
 		<label for="selmod" class="form-label">Select Model:</label>
 		<select class="form-select" id="selmod" name="select_model" onchange="clearAllFields()">
-			<option id="model1" value="models/trained_RF_Acc_model_[1, 2, 3, 4, 5]_1.joblib">models/trained_RF_Acc_model_[1, 2, 3, 4, 5]_1.joblib</option>
-			<option id="model2" value="models/trained_SVM_Acc_model_[1, 2, 3, 4, 5]_1.joblib">models/trained_SVM_Acc_model_[1, 2, 3, 4, 5]_1.joblib</option>
-			<option id="model3" value="models/trained_SVM_Acc_model_[1, 2, 4, 5]_1.joblib">models/trained_SVM_Acc_model_[1, 2, 4, 5]_1.joblib</option>
-			<option id="model4" value="models/trained_SVM_F2_model_[2, 3, 4]_1.joblib">models/trained_SVM_F2_model_[2, 3, 4]_1.joblib</option>
-			<option id="model5" value="models/trained_XGB_F2_model_[1, 2, 3, 4, 5]_1.json">models/trained_XGB_F2_model_[1, 2, 3, 4, 5]_1.json</option>
+			<option id="model1" value="models/trained_RF_Acc_model_[1, 2, 3, 4, 5]_1.joblib">trained_RF_Acc_model_[CTS, MTS, LTS, MTD, Sex]</option>
+			<option id="model2" value="models/trained_SVM_Acc_model_[1, 2, 3, 4, 5]_1.joblib">models/trained_SVM_Acc_model_[CTS, MTS, LTS, MTD, Sex]</option>
+			<option id="model3" value="models/trained_SVM_Acc_model_[1, 2, 4, 5]_1.joblib">models/trained_SVM_Acc_model_[CTS, MTS, MTD, Sex]</option>
+			<option id="model4" value="models/trained_SVM_F2_model_[2, 3, 4]_1.joblib">models/trained_SVM_F2_model_[MTS, LTS, MTD]</option>
+			<option id="model5" value="models/trained_XGB_F2_model_[1, 2, 3, 4, 5]_1.json">models/trained_XGB_F2_model_[CTS, MTS, LTS, MTD, Sex]</option>
 		</select>
 		<label for="CTS" class="form-label form-label-spacer" id="cts-label">Enter <mark>CTS</mark> (Coronal Tibial Slope) in degrees:</label>
 		<input type="text" class="form-control" id="CTS" name="CoronalTibialSlope" value="" placeholder="Enter CTS" onchange="updateCoronalTibialSlope()">
