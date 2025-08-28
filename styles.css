@@ -18,3 +18,33 @@
 			margin-top: 48px;
 			margin-bottom: 48px;
 		}
+		@media (resolution: 75dpi) {
+			.website-footer {
+				text-align: center;
+				margin-top: 148px;
+			}
+		@media (resolution: 67dpi) {
+			.website-footer {
+				text-align: center;
+				margin-top: 244px;
+			}
+		}
+		@media (resolution: 50dpi) {
+			.website-footer {
+				text-align: center;
+				margin-top: 340px;
+			}
+		}
+		@media (resolution: 33dpi) {
+			.website-footer {
+				text-align: center;
+				margin-top: 436px;
+			}
+		}
+		@media (resolution: 25dpi) {
+			.website-footer {
+				text-align: center;
+				margin-top: 532px;
+			}
+		}
+			
