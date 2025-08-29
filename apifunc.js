@@ -24,8 +24,10 @@ async function TestAPI() {
     adjustInputs("MTD-degrees");
     adjustInputs("selected-sex");
 
-    document.getElementById("submissionstatus").style.display = "block";
-    document.getElementById("submissionstatus").innerHTML = "Loading...";
+    if (sessionStorage.getItem("RESULT") != null) {
+        document.getElementById("submissionstatus").style.display = "block";
+        document.getElementById("submissionstatus").innerHTML = "Loading...";
+    }
     
     var response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
