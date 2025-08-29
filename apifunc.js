@@ -37,14 +37,12 @@ async function TestAPI() {
                               "MedialTibialDepth": sessionStorage.getItem("MTD-degrees"),
                               "selected-sex": sessionStorage.getItem("selected-sex")})
     })
-
-    document.getElementById("submissionstatus").style.display = "none";
-    document.getElementById("submissionstatus").innerHTML = "";
-    
+        
     .then(response => response.json())
     .then(data => sessionStorage.setItem("RESULT", data.Prediction));
 
-    location.reload();
+    document.getElementById("submissionstatus").style.display = "none";
+    document.getElementById("submissionstatus").innerHTML = "";
 
-    setTimeout(redirectToResult(), 500);
+    location.reload();
 }
