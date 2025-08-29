@@ -23,6 +23,9 @@ async function TestAPI() {
     adjustInputs("LTS-degrees");
     adjustInputs("MTD-degrees");
     adjustInputs("selected-sex");
+
+    document.getElementById("submissionstatus").style.display = "block";
+    document.getElementById("submissionstatus").innerHTML = "Loading...";
     
     var response = await fetch('https://acl-frameworkapitesting.onrender.com/healthz', {
         method: "POST",
@@ -34,7 +37,10 @@ async function TestAPI() {
                               "MedialTibialDepth": sessionStorage.getItem("MTD-degrees"),
                               "selected-sex": sessionStorage.getItem("selected-sex")})
     })
-        
+
+    document.getElementById("submissionstatus").style.display = "none";
+    document.getElementById("submissionstatus").innerHTML = "";
+    
     .then(response => response.json())
     .then(data => sessionStorage.setItem("RESULT", data.Prediction));
 
