@@ -24,7 +24,7 @@ async function TestAPI() {
     adjustInputs("MTD-degrees");
     adjustInputs("selected-sex");
 
-    if (sessionStorage.getItem("RESULT") != null) {
+    if (sessionStorage.getItem("RESULT") == null) {
         document.getElementById("submissionstatus").style.display = "block";
         document.getElementById("submissionstatus").innerHTML = "Loading...";
     }
