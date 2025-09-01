@@ -4,6 +4,8 @@
 		.website-footer {
 			text-align: center;
 			margin-top: 196px;
+			padding-top: 250px;
+			padding-bottom: 250px;
 		}
 		.features-display {
 			margin-top: 120px;
@@ -17,34 +19,4 @@
 		#result-l, #result-u {
 			margin-top: 48px;
 			margin-bottom: 48px;
-		}
-		@media only screen and (max-width: 600px) {
-			.website-footer {
-				text-align: center;
-				margin-top: 196px;
-			}
-		}
-		@media only screen and (min-width: 600px) {
-			.website-footer {
-				text-align: center;
-				margin-top: 244px;
-			}	
-		}
-		@media only screen and (min-width: 768px) {
-			.website-footer {
-				text-align: center;
-				margin-top: 292px;
-			}	
-		}
-		@media only screen and (min-width: 992px) {
-			.website-footer {
-				text-align: center;
-				margin-top: 340px;
-			}
-		}
-		@media only screen and (min-width: 1200px) {
-			.website-footer {
-				text-align: center;
-				margin-top: 384px;
-			}
 		}
