@@ -21,7 +21,8 @@
 			margin-bottom: 48px;
 		}
 		.container {
-			margin: auto;
-			border: 2px solid orange;
-			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 2 px solid orange;
 		}
