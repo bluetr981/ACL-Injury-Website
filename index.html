@@ -9,10 +9,8 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-	<!--
 	<script src="script.js"></script>
 	<script src="apifunc.js"></script>
-	-->
 </head>
 <body>
 
@@ -27,18 +25,18 @@
 <div class="container">
 	<p>Models are to be published shortly.</p>
 </div>
-	
-<!--
+
 <form action="https://bluetr981.github.io/ACL-Injury-Website/" id="submit_form_data" onsubmit="TestAPI();" method="get">
 	<h1 class="features-display text-center">Features</h1>
 	<div class="container p-5 selection-container bg-light text-dark text-center">
 		<label for="selmod" class="form-label">Select Model:</label>
 		<select class="form-select" id="selmod" name="select_model" onchange="clearAllFields()">
-			<option id="model1" value="models/trained_RF_Acc_model_[1, 2, 3, 4, 5]_1.joblib">trained_RF_Acc_model_[CTS, MTS, LTS, MTD, Sex]</option>
-			<option id="model2" value="models/trained_SVM_Acc_model_[1, 2, 3, 4, 5]_1.joblib">trained_SVM_Acc_model_[CTS, MTS, LTS, MTD, Sex]</option>
-			<option id="model3" value="models/trained_SVM_Acc_model_[1, 2, 4, 5]_1.joblib">trained_SVM_Acc_model_[CTS, MTS, MTD, Sex]</option>
-			<option id="model4" value="models/trained_SVM_F2_model_[2, 3, 4]_1.joblib">trained_SVM_F2_model_[MTS, LTS, MTD]</option>
-			<option id="model5" value="models/trained_XGB_F2_model_[1, 2, 3, 4, 5]_1.json">trained_XGB_F2_model_[CTS, MTS, LTS, MTD, Sex]</option>
+			<option id="model1" value="models/AutoGluon_balanced_accuracy_42">WeightedEnsemble_L2_42 (accuracy)</option>
+			<option id="model2" value="models/AutoGluon_balanced_accuracy_Full">WeightedEnsemble_L2_Full (accuracy)</option>
+			<option id="model3" value="models/AutoGluon_f1_42">WeightedEnsemble_L2_F1_42</option>
+			<option id="model4" value="models/AutoGluon_f1_Full">WeightedEnsemble_L2_F1_Full</option>
+			<option id="model5" value="models/AutoGluon_f2_42">WeightedEnsemble_L2_F2_42</option>
+			<option id="model6" value="models/AutoGluon_f2_Full">WeightedEnsemble_L2_F2_Full</option>
 		</select>
 		<label for="CTS" class="form-label form-label-spacer" id="cts-label">Enter <mark>CTS</mark> (Coronal Tibial Slope) in degrees:</label>
 		<input type="text" class="form-control" id="CTS" name="CoronalTibialSlope" value="" placeholder="Enter CTS" onchange="updateCoronalTibialSlope()">
@@ -183,7 +181,6 @@
 		document.getElementById("result-u").style.display = "none";
 	}
 </script>
--->
-	
+		
 </body>
 </html>
