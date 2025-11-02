@@ -41,7 +41,7 @@ async function TestAPI() {
     })
         
     .then(response => response.json())
-    .then(data => sessionStorage.setItem("RESULT", data.Prediction));
+    .then(data => sessionStorage.setItem("RESULT", data.Outputs));
 
     document.getElementById("submissionstatus").style.display = "none";
     document.getElementById("submissionstatus").innerHTML = "";
