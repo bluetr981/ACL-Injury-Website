@@ -21,7 +21,7 @@
 		</h1>
 	</center>
 </div>
-	
+
 <form action="https://bluetr981.github.io/ACL-Injury-Website/" id="submit_form_data" onsubmit="TestAPI();" method="get">
 	<h1 class="features-display text-center">Features</h1>
 	<div class="container p-5 selection-container bg-light text-dark text-center">
@@ -33,13 +33,13 @@
 			<option id="model4" value="models/trained_SVM_F2_model_[2, 3, 4]_1.joblib">trained_SVM_F2_model_[MTS, LTS, MTD]</option>
 			<option id="model5" value="models/trained_XGB_F2_model_[1, 2, 3, 4, 5]_1.json">trained_XGB_F2_model_[CTS, MTS, LTS, MTD, Sex]</option>
 		</select>
-		<label for="CTS" class="form-label" id="cts-label">Enter <mark>CTS</mark> (Coronal Tibial Slope) in degrees:</label>
+		<label for="CTS" class="form-label form-label-spacer" id="cts-label">Enter <mark>CTS</mark> (Coronal Tibial Slope) in degrees:</label>
 		<input type="text" class="form-control" id="CTS" name="CoronalTibialSlope" value="" placeholder="Enter CTS" onchange="updateCoronalTibialSlope()">
-		<label for="MTS" class="form-label" id="mts-label">Enter <mark>MTS</mark> (Medial Tibial Slope) in degrees:</label>
+		<label for="MTS" class="form-label form-label-spacer" id="mts-label">Enter <mark>MTS</mark> (Medial Tibial Slope) in degrees:</label>
 		<input type="text" class="form-control" id="MTS" name="MedialTibialSlope" value="" placeholder="Enter MTS" onchange="updateMedialTibialSlope()" required>
-		<label for="LTS" class="form-label" id="lts-label">Enter <mark>LTS</mark> (Lateral Tibial Slope) in degrees:</label>
+		<label for="LTS" class="form-label form-label-spacer" id="lts-label">Enter <mark>LTS</mark> (Lateral Tibial Slope) in degrees:</label>
 		<input type="text" class="form-control" id="LTS" name="LateralTibialSlope" value="" placeholder="Enter LTS" onchange="updateLateralTibialSlope()">
-		<label for="MTD" class="form-label" id="mtd-label">Enter <mark>MTD</mark> (Medial Tibial Depth) in degrees:</label>
+		<label for="MTD" class="form-label form-label-spacer" id="mtd-label">Enter <mark>MTD</mark> (Medial Tibial Depth) in degrees:</label>
 		<input type="text" class="form-control" id="MTD" name="MedialTibialDepth" value="" placeholder="Enter MTD" onchange="updateMedialTibialDepth()" required>
 		<label for="selsex" class="form-label form-label-spacer" id="select-sex">Select Sex (M/F):</label>
 		<select class="form-select" id="selsex" name="selectsex" onchange="updateSelectedSex()" required>
@@ -47,21 +47,20 @@
 			<option>Female</option>
 		</select>
 	</div>
-	
+
 	<div class="container mt-5">
 		<center>
 			<button type="submit" class="btn btn-danger text-white" id="submit_button">Predict Outcome</button>
 			<button type="button" class="btn btn-primary text-white" id="clear_button" onclick="clearAllFields()">Clear Inputs</button>
 		</center>
 	</div>
-</form>
-	
+
 	<script>
 		document.getElementById("submit_form_data").addEventListener("submit", 
 		function(event) { 
 			event.preventDefault();
 		});
-			
+
 		const selectionMenu = document.getElementById("selmod");
 
 		if (sessionStorage.getItem("selected_model") == null) {
@@ -69,7 +68,7 @@
 
 			document.getElementById("submit_button").style.display = "none";
 			document.getElementById("clear_button").style.display = "none";
-			
+
 			document.getElementById("cts-label").style.display = "none";
 			document.getElementById("CTS").style.display = "none";
 			document.getElementById("mts-label").style.display = "none";
@@ -84,7 +83,7 @@
 		else {
 			document.getElementById("submit_button").style.display = "inline-block";
 			document.getElementById("clear_button").style.display = "inline-block";
-			
+
 			const selectedChoice = sessionStorage.getItem("selected_model");
 
 			for (const x of selectionMenu.options) {
@@ -103,7 +102,7 @@
 				if (document.getElementById("LTS").required == true) {
 					document.getElementById("LTS").required = false;
 				}
-				
+
 				document.getElementById("lts-label").style.display = "none";
 				document.getElementById("LTS").style.display = "none";
 			}
@@ -114,7 +113,7 @@
 				if (document.getElementById("CTS").required == true) {
 					document.getElementById("CTS").required = false;
 				}
-				
+
 				if (document.getElementById("selsex").required == true) {
 					document.getElementById("selsex").required = false;
 				}
@@ -128,12 +127,12 @@
 				document.getElementById("CTS").value = "";
 				document.getElementById("LTS").value = "";
 				document.getElementById("selsex").value = "";
-				
+
 				document.getElementById("CTS").required = true;
 				document.getElementById("LTS").required = true;
 				document.getElementById("selsex").required = true;
 			}
-			
+
 			document.getElementById("CTS").value = sessionStorage.getItem("CTS-degrees");
 			document.getElementById("MTS").value = sessionStorage.getItem("MTS-degrees");
 			document.getElementById("LTS").value = sessionStorage.getItem("LTS-degrees");
@@ -145,14 +144,14 @@
 </form>
 
 <p id="submissionstatus" style="margin-top:48px;text-align:center;"></p>
-	
+
 <div class="container" id="result-l">
 	<div class="alert alert-danger">
 		<h2 class="text-center">Verdict: Likely</h2>
 		<p><center>Given the following values for the features required, it is likely that the patient will obtain an ACL injury when participating in sports or any other related activities.</center></p>
 	</div>
 </div>
-	
+
 <div class="container" id="result-u">
 	<div class="alert alert-success">
 		<h2 class="text-center">Verdict: Unlikely</h2>
@@ -163,7 +162,7 @@
 <script>
 	const UNLIKELY_RESULT = '0';
 	const LIKELY_RESULT = '1';
-	
+
 	if (sessionStorage.getItem("RESULT") != null) {
 		if (sessionStorage.getItem("RESULT") == UNLIKELY_RESULT) {
 			document.getElementById("result-l").style.display = "none";
@@ -177,6 +176,10 @@
 		document.getElementById("result-u").style.display = "none";
 	}
 </script>
+	
+<div class="container-fluid bg-light website-footer">
+	<footer>© 2025 Dr. Naveen Chandrashekhar, Cheng Hao Kao, and Puneet Bhat - <a href="https://uwaterloo.ca/structural-biomechanics-lab/">Structural Biomechanics Lab at the University of Waterloo</a></footer>
+</div>
 
 </body>
 </html>
