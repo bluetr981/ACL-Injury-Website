@@ -47,13 +47,14 @@
 				<option>Female</option>
 			</select>
 		</div>
+		
 		<div class="container mt-5">
 			<center>
 				<button type="submit" class="btn btn-danger text-white" id="submit_button">Predict Outcome</button>
 				<button type="button" class="btn btn-primary text-white" id="clear_button" onclick="clearAllFields()">Clear Inputs</button>
 			</center>
 		</div>
-	</form>
+		
 	<script>
 		document.getElementById("submit_form_data").addEventListener("submit", function(event) { event.preventDefault(); });
 
@@ -85,6 +86,8 @@
 		document.getElementById("MTD").value = sessionStorage.getItem("MTD-degrees");
 		document.getElementById("selsex").value = sessionStorage.getItem("selected-sex");
 	}
+	</script>
+</form>
 
 <p id="submissionstatus" style="margin-top:48px;text-align:center;"></p>
 
