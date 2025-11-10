@@ -40,7 +40,7 @@
 			<input type="text" class="form-control" id="MTS" name="MedialTibialSlope" value="" placeholder="Enter MTS" onchange="updateMedialTibialSlope()" required>
 			<label for="LTS" class="form-label form-label-spacer" id="lts-label">Enter <mark>LTS</mark> (Lateral Tibial Slope) in degrees:</label>
 			<input type="text" class="form-control" id="LTS" name="LateralTibialSlope" value="" placeholder="Enter LTS" onchange="updateLateralTibialSlope()" required>
-			<label for="MTD" class="form-label form-label-spacer" id="mtd-label">Enter <mark>MTD</mark> (Medial Tibial Depth) in degrees:</label>
+			<label for="MTD" class="form-label form-label-spacer" id="mtd-label">Enter <mark>MTD</mark> (Medial Tibial Depth) in millimeters (mm):</label>
 			<input type="text" class="form-control" id="MTD" name="MedialTibialDepth" value="" placeholder="Enter MTD" onchange="updateMedialTibialDepth()" required>
 			<label for="selsex" class="form-label form-label-spacer" id="select-sex">Select Sex (M/F):</label>
 			<select class="form-select" id="selsex" name="selectsex" onchange="updateSelectedSex()" required>
@@ -84,7 +84,8 @@
 	</script>				
 
 	<p id="submissionstatus" style="margin-top:48px;text-align:center;"></p>
-	
+
+	<!--
 	<div class="container" id="result-l">
 		<div class="alert alert-danger">
 			<h2 class="text-center">Verdict: Likely</h2>
@@ -98,8 +99,7 @@
 			<p><center>Given the following features, it is unlikely that the patient will obtain an ACL injury when participating in sports or any other related activities.</center></p>
 		</div>
 	</div>
-
-	<!--
+	
 	<script>
 		const UNLIKELY_RESULT = '0';
 		const LIKELY_RESULT = '1';
